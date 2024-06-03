@@ -1,0 +1,126 @@
+/* # 스타일, 배경 설정 */
+/* 공통 속성 */
+.item{
+    position: absolute;
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+ /* 무대 컨테이너  */
+.stage-container{
+    width: 100vw;
+    height: 100vh;
+    position: relative;
+    background-image: url(../source/op-red-curtain-bg.jpg);
+    z-index: 1;
+}
+/* 버튼 */
+#showTime{
+    width: 40%;
+    height: 20%;
+    top: 40%;
+    left: 30%;
+    border-radius: 20px;
+    color: black;
+    border: 10px dotted yellow;
+    background:none;
+    
+    font-size: 2rem;
+    font-weight: 700;
+    z-index: 10;
+    
+    animation-name: twinkle-button;
+    animation-duration: 1s;
+    animation-iteration-count: infinite;
+}
+#ceil-curtain{
+    width: 100%;
+    height: 100%;
+    background-image: url(../source/op-stage-curtain.png);
+    z-index: 5;
+}
+#stage-floor{
+    width: 100%;
+    height: 50%;
+    top: 50%;
+    background-image: url(../source/op-stage-floor.png);
+    z-index: 2;
+}
+#l-curtain{
+    width: 50%;
+    height: 100%;
+    background-image: url(../source/op-red-curtain-bg.jpg);
+    z-index: 9;
+}
+#r-curtain{
+    width: 50%;
+    height: 100%;
+    left: 50%;
+    background-image: url(../source/op-red-curtain-bg.jpg);
+    z-index: 9;
+}
+#purin-the-singer{
+    width: 30%;
+    height: 30%;
+    bottom: 10%;
+    right: 0%;
+    background-image: url(../source/op-purin.webp);
+    background-size: contain;
+    z-index: 3;
+}
+#dot-glasses{    
+    width: 20vw;
+    height: 20vh;
+    left: 13%;
+    top: 20%;
+    background-image: url(../source/op-dot-glass.png);
+    z-index: 4;
+}
+#stand-mic{    
+    width: 30%;
+    height: 30%;
+    bottom: 10%;
+    right: 50%;
+    transform: scaleX(-1);
+    background-image: url(../source/op-stand-mic.png);
+    background-size: contain;
+    z-index: 5;
+}
+
+/* 애니메이션 설정 */
+/* 왼쪽 커튼 개방*/
+.l-curtain-activated{
+    animation: l-curtain-open;
+    animation-duration: 500ms;
+    animation-iteration-count: 1;
+    animation-fill-mode: forwards;
+}
+/* 오른쪽 커튼 개방 */
+.r-curtain-activated{
+    animation: r-curtain-open;
+    animation-duration: 500ms;
+    animation-iteration-count: 1;
+    animation-fill-mode: forwards;
+}
+/* 푸린 등장 */
+.purin-advent-activated{
+    animation: purin-advent;
+    animation-duration: 2500ms;
+    animation-iteration-count: 1;
+    animation-fill-mode: forwards;
+}
+/* 돳-선글라스 온다 */
+.dot-glasses-activated{
+    animation-name: dot-glass-appear;
+    animation-duration: 2500ms;
+    animation-fill-mode: forwards;
+    animation-iteration-count: 1;
+}
+/* 노래시작한다 */
+.world-best-singer-activated{
+    animation-name: world-best-purin;
+    animation-duration: 1000ms;
+    animation-iteration-count: infinite;
+}
+
+

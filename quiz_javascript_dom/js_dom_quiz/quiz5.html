@@ -67,18 +67,18 @@
     <script>
       // TODO: 문제 조건을 만족하는 js 코드 작성
       // (참고) done 클래스와 todo 클래스에 대한 스타일시트는 haed > style 태그에 이미 정의되어 있습니다.
-      const trobledToDoList1 = document.getElementsByTagName('li');
-      console.log(trobledToDoList1.length);
-      for( i = 0 ; i < trobledToDoList1.length ; i++){
-        trobledToDoList1[i].className = ['todo'];
+      const troubledToDoList1 = document.getElementsByTagName('li');
+      console.log(troubledToDoList1.length);
+      for( i = 0 ; i < troubledToDoList1.length ; i++){
+        troubledToDoList1[i].className = ['todo'];
       }
       for( i = 0 ; i < 2 ; i++){
-        trobledToDoList1[i].classList.add = ['checked'];
+        troubledToDoList1[i].classList.add = ['checked'];
       }
       const realLastCheckedToDoList = document.getElementsByClassName('checked');
       for( i = 0 ; i < 2 ; i++){
-        trobledToDoList1[i].classList.remove('todo');
-        trobledToDoList1[i].className = ['done']; 
+        troubledToDoList1[i].classList.remove('todo');
+        troubledToDoList1[i].className = ['done']; 
       }
     </script>
   </body>
