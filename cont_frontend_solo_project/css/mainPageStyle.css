@@ -6,7 +6,7 @@ body{
     background-size: cover;
     position: relative;
 }
-/* Header */
+/* 헤 - 더 */
 body  *{
     box-sizing: border-box;
     border: 4px solid white;
@@ -21,7 +21,7 @@ header {
     padding: 10px 10px;
 }
 
-/* Main Content */
+/* 메인 */
 main {
     width: 99%;
     height: 60%;
@@ -44,10 +44,13 @@ section {
     grid-gap: 10px;
 }
 
+/* 진행상황 나열?  */
 aside {
     width: 40%;
     height: 100%;
 }
+
+/* 컨텐츠 박스 -  */
 
 .moveBox {
     width: 100%;
