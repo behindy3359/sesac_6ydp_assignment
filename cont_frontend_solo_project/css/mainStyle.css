@@ -1,0 +1,25 @@
+.main-container {
+    position: relative;
+}
+aside.fixed {
+    position: fixed;
+    top: calc(30vh);
+    width: 20vw;
+    height: calc(100% - (70px + 56px));
+    right: calc(( 20vw - 15px )* -1 );
+    overflow-y: auto;
+    z-index: 1030;
+    opacity: 0.4;
+}
+.carousel-image {
+    max-width: 100%; /* 이미지의 최대 너비를 컨테이너 너비로 설정 */
+    max-height: 75vh; /* 이미지의 최대 높이를 뷰포트 높이의 75%로 설정 */
+    object-fit: cover; /* 이미지가 컨테이너에 맞게 잘리거나 늘어나도록 설정 */
+  }
+  
+
+.side-bar:hover {
+    transform: translateX(-15vw);
+    opacity: 1;
+    transition: 0.5s;
+}

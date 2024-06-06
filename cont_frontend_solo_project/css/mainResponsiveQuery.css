@@ -1,0 +1,22 @@
+@media screen and ( max-width : 992px) and ( min-width : 770px ) {
+    aside.fixed {
+        position: fixed;
+        top: calc(30vh);
+        width: 300px;
+        height: calc(100% - (70px + 56px));
+        right: calc(( 300px - 15px )* -1 );
+        overflow-y: auto;
+        z-index: 1030;
+        opacity: 0.4;
+    }
+    .side-bar:hover {
+        transform: translateX(-280px);
+        opacity: 1;
+        transition: 0.5s;
+    }
+}
+@media screen and ( max-width : 770px)  {
+    aside.fixed {
+        display: none;
+    }
+}

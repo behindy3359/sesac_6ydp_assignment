@@ -1,0 +1,771 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <!-- bootstrap CDN -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+    
+    <!-- Font Awesome CDN-->
+    <script src="https://kit.fontawesome.com/14db1d786f.js" crossorigin="anonymous"></script>
+  
+    <link rel="stylesheet" href="./css/mainStyle.css">
+    <title>Document</title>
+</head>
+<body>
+    <main class="bd-main order-1">
+        <div class="bd-intro pt-2 ps-lg-2">
+          <div class="d-md-flex flex-md-row-reverse align-items-center justify-content-between">
+            <div class="mb-3 mb-md-0 d-flex text-nowrap"><a class="btn btn-sm btn-bd-light rounded-2" href="https://github.com/twbs/bootstrap/blob/v5.3.3/site/content/docs/5.3/components/offcanvas.md" title="View and edit this file on GitHub" target="_blank" rel="noopener">
+                View on GitHub
+              </a>
+            </div>
+            <h1 class="bd-title mb-0" id="content">Offcanvas</h1>
+          </div>
+          <p class="bd-lead">Build hidden sidebars into your project for navigation, shopping carts, and more with a few classes and our JavaScript plugin.</p>
+          <script async="" src="https://cdn.carbonads.com/carbon.js?serve=CKYIKKJL&amp;placement=getbootstrapcom" id="_carbonads_js"></script><div id="carbonads"><span>
+  
+  <span class="carbon-wrap">
+      <a href="https://srv.carbonads.net/ads/click/x/GTND427JCASDV23MF6BLYKQUC6AD453MCWBDKZ3JCAYIEKQLCASI42JKC6AIP2QWCVYD42JNCWADKKQEFTAI6KJKC6SI427NCW7IKK3EHJNCLSIZ" class="carbon-img" target="_blank" rel="noopener sponsored">
+          <img src="https://srv.carbonads.net/static/30242/fba2b75980d7e962392c7481a2be33acdcf00528" alt="ads via Carbon" border="0" height="100" width="130" data-no-statview="no" style="max-width: 130px;">
+      </a>
+      <a href="https://srv.carbonads.net/ads/click/x/GTND427JCASDV23MF6BLYKQUC6AD453MCWBDKZ3JCAYIEKQLCASI42JKC6AIP2QWCVYD42JNCWADKKQEFTAI6KJKC6SI427NCW7IKK3EHJNCLSIZ" class="carbon-text" target="_blank" rel="noopener sponsored">
+          Redesign the way you jam with FigJam AI.
+      </a>
+  </span>
+  <a href="http://carbonads.net/?utm_source=getbootstrapcom&amp;utm_medium=ad_via_link&amp;utm_campaign=in_unit&amp;utm_term=carbon" class="carbon-poweredby" target="_blank" rel="noopener sponsored">ads via Carbon</a>
+  </span></div>
+  
+        </div>
+  
+        
+          <div class="bd-toc mt-3 mb-5 my-lg-0 mb-lg-5 px-sm-1 text-body-secondary">
+            <button class="btn btn-link p-md-0 mb-2 mb-md-0 text-decoration-none bd-toc-toggle d-md-none" type="button" data-bs-toggle="collapse" data-bs-target="#tocContents" aria-expanded="false" aria-controls="tocContents">
+              On this page
+              <svg class="bi d-md-none ms-2" aria-hidden="true"><use xlink:href="#chevron-expand"></use></svg>
+            </button>
+            <strong class="d-none d-md-block h6 my-2 ms-3">On this page</strong>
+            <hr class="d-none d-md-block my-2 ms-3">
+            <div class="collapse bd-toc-collapse" id="tocContents">
+              <nav id="TableOfContents">
+    <ul>
+      <li><a href="#how-it-works" class="">How it works</a></li>
+      <li><a href="#examples" class="">Examples</a>
+        <ul>
+          <li><a href="#offcanvas-components" class="">Offcanvas components</a></li>
+          <li><a href="#live-demo" class="">Live demo</a></li>
+          <li><a href="#body-scrolling" class="active">Body scrolling</a></li>
+          <li><a href="#body-scrolling-and-backdrop" class="">Body scrolling and backdrop</a></li>
+          <li><a href="#static-backdrop" class="">Static backdrop</a></li>
+        </ul>
+      </li>
+      <li><a href="#dark-offcanvas" class="">Dark offcanvas</a></li>
+      <li><a href="#responsive" class="">Responsive</a></li>
+      <li><a href="#placement" class="">Placement</a></li>
+      <li><a href="#accessibility">Accessibility</a></li>
+      <li><a href="#css">CSS</a>
+        <ul>
+          <li><a href="#variables">Variables</a></li>
+          <li><a href="#sass-variables">Sass variables</a></li>
+        </ul>
+      </li>
+      <li><a href="#usage">Usage</a>
+        <ul>
+          <li><a href="#via-data-attributes">Via data attributes</a>
+            <ul>
+              <li><a href="#toggle">Toggle</a></li>
+              <li><a href="#dismiss">Dismiss</a></li>
+            </ul>
+          </li>
+          <li><a href="#via-javascript">Via JavaScript</a></li>
+          <li><a href="#options">Options</a></li>
+          <li><a href="#methods">Methods</a></li>
+          <li><a href="#events">Events</a></li>
+        </ul>
+      </li>
+    </ul>
+  </nav>
+            </div>
+          </div>
+        
+  
+        <div class="bd-content ps-lg-2">
+          
+  
+          <h2 id="how-it-works">How it works <a class="anchor-link" href="#how-it-works" aria-label="Link to this section: How it works"></a></h2>
+  <p>Offcanvas is a sidebar component that can be toggled via JavaScript to appear from the left, right, top, or bottom edge of the viewport. Buttons or anchors are used as triggers that are attached to specific elements you toggle, and <code>data</code> attributes are used to invoke our JavaScript.</p>
+  <ul>
+  <li>Offcanvas shares some of the same JavaScript code as modals. Conceptually, they are quite similar, but they are separate plugins.</li>
+  <li>Similarly, some <a href="#sass-variables">source Sass</a> variables for offcanvas’s styles and dimensions are inherited from the modal’s variables.</li>
+  <li>When shown, offcanvas includes a default backdrop that can be clicked to hide the offcanvas.</li>
+  <li>Similar to modals, only one offcanvas can be shown at a time.</li>
+  </ul>
+  <p><strong>Heads up!</strong> Given how CSS handles animations, you cannot use <code>margin</code> or <code>translate</code> on an <code>.offcanvas</code> element. Instead, use the class as an independent wrapping element.</p>
+  <div class="bd-callout bd-callout-info">
+  The animation effect of this component is dependent on the <code>prefers-reduced-motion</code> media query. See the <a href="/docs/5.3/getting-started/accessibility/#reduced-motion">reduced motion section of our accessibility documentation</a>.
+  </div>
+  
+  <h2 id="examples">Examples <a class="anchor-link" href="#examples" aria-label="Link to this section: Examples"></a></h2>
+  <h3 id="offcanvas-components">Offcanvas components <a class="anchor-link" href="#offcanvas-components" aria-label="Link to this section: Offcanvas components"></a></h3>
+  <p>Below is an offcanvas example that is shown by default (via <code>.show</code> on <code>.offcanvas</code>). Offcanvas includes support for a header with a close button and an optional body class for some initial <code>padding</code>. We suggest that you include offcanvas headers with dismiss actions whenever possible, or provide an explicit dismiss action.</p>
+  <div class="bd-example-snippet bd-code-snippet">
+    <div class="bd-example m-0 border-0 bd-example-offcanvas p-0 bg-body-tertiary overflow-hidden">
+      
+  <div class="offcanvas offcanvas-start show" tabindex="-1" id="offcanvas" aria-labelledby="offcanvasLabel">
+    <div class="offcanvas-header">
+      <h5 class="offcanvas-title" id="offcanvasLabel">Offcanvas</h5>
+      <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+    </div>
+    <div class="offcanvas-body">
+      Content for the offcanvas goes here. You can place just about any Bootstrap component or custom elements here.
+    </div>
+  </div>
+  
+    </div><div class="d-flex align-items-center highlight-toolbar ps-3 pe-2 py-1 border-0 border-top border-bottom">
+          <small class="font-monospace text-body-secondary text-uppercase">html</small>
+          <div class="d-flex ms-auto">
+            <button type="button" class="btn-edit text-nowrap" aria-label="Try it on StackBlitz" data-bs-original-title="Try it on StackBlitz">
+              <svg class="bi" aria-hidden="true"><use xlink:href="#lightning-charge-fill"></use></svg>
+            </button>
+            <button type="button" class="btn-clipboard mt-0 me-0" aria-label="Copy to clipboard" data-bs-original-title="Copy to clipboard">
+              <svg class="bi" aria-hidden="true"><use xlink:href="#clipboard"></use></svg>
+            </button>
+          </div>
+        </div><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-html" data-lang="html"><span class="line"><span class="cl"><span class="p">&lt;</span><span class="nt">div</span> <span class="na">class</span><span class="o">=</span><span class="s">"offcanvas offcanvas-start show"</span> <span class="na">tabindex</span><span class="o">=</span><span class="s">"-1"</span> <span class="na">id</span><span class="o">=</span><span class="s">"offcanvas"</span> <span class="na">aria-labelledby</span><span class="o">=</span><span class="s">"offcanvasLabel"</span><span class="p">&gt;</span>
+  </span></span><span class="line"><span class="cl">  <span class="p">&lt;</span><span class="nt">div</span> <span class="na">class</span><span class="o">=</span><span class="s">"offcanvas-header"</span><span class="p">&gt;</span>
+  </span></span><span class="line"><span class="cl">    <span class="p">&lt;</span><span class="nt">h5</span> <span class="na">class</span><span class="o">=</span><span class="s">"offcanvas-title"</span> <span class="na">id</span><span class="o">=</span><span class="s">"offcanvasLabel"</span><span class="p">&gt;</span>Offcanvas<span class="p">&lt;/</span><span class="nt">h5</span><span class="p">&gt;</span>
+  </span></span><span class="line"><span class="cl">    <span class="p">&lt;</span><span class="nt">button</span> <span class="na">type</span><span class="o">=</span><span class="s">"button"</span> <span class="na">class</span><span class="o">=</span><span class="s">"btn-close"</span> <span class="na">data-bs-dismiss</span><span class="o">=</span><span class="s">"offcanvas"</span> <span class="na">aria-label</span><span class="o">=</span><span class="s">"Close"</span><span class="p">&gt;&lt;/</span><span class="nt">button</span><span class="p">&gt;</span>
+  </span></span><span class="line"><span class="cl">  <span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
+  </span></span><span class="line"><span class="cl">  <span class="p">&lt;</span><span class="nt">div</span> <span class="na">class</span><span class="o">=</span><span class="s">"offcanvas-body"</span><span class="p">&gt;</span>
+  </span></span><span class="line"><span class="cl">    Content for the offcanvas goes here. You can place just about any Bootstrap component or custom elements here.
+  </span></span><span class="line"><span class="cl">  <span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
+  </span></span><span class="line"><span class="cl"><span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span></span></span></code></pre></div>
+  </div>
+  
+  <h3 id="live-demo">Live demo <a class="anchor-link" href="#live-demo" aria-label="Link to this section: Live demo"></a></h3>
+  <p>Use the buttons below to show and hide an offcanvas element via JavaScript that toggles the <code>.show</code> class on an element with the <code>.offcanvas</code> class.</p>
+  <ul>
+  <li><code>.offcanvas</code> hides content (default)</li>
+  <li><code>.offcanvas.show</code> shows content</li>
+  </ul>
+  <p>You can use a link with the <code>href</code> attribute, or a button with the <code>data-bs-target</code> attribute. In both cases, the <code>data-bs-toggle="offcanvas"</code> is required.</p>
+  <div class="bd-example-snippet bd-code-snippet">
+    <div class="bd-example m-0 border-0">
+      
+  <a class="btn btn-primary" data-bs-toggle="offcanvas" href="#offcanvasExample" role="button" aria-controls="offcanvasExample">
+    Link with href
+  </a>
+  <button class="btn btn-primary" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasExample" aria-controls="offcanvasExample">
+    Button with data-bs-target
+  </button>
+  
+  <div class="offcanvas offcanvas-start" tabindex="-1" id="offcanvasExample" aria-labelledby="offcanvasExampleLabel">
+    <div class="offcanvas-header">
+      <h5 class="offcanvas-title" id="offcanvasExampleLabel">Offcanvas</h5>
+      <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+    </div>
+    <div class="offcanvas-body">
+      <div class="">
+        Some text as placeholder. In real life you can have the elements you have chosen. Like, text, images, lists, etc.
+      </div>
+      <div class="dropdown mt-3">
+        <button class="btn btn-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown">
+          Dropdown button
+        </button>
+        <ul class="dropdown-menu">
+          <li><a class="dropdown-item" href="#">Action</a></li>
+          <li><a class="dropdown-item" href="#">Another action</a></li>
+          <li><a class="dropdown-item" href="#">Something else here</a></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+  
+    </div><div class="d-flex align-items-center highlight-toolbar ps-3 pe-2 py-1 border-0 border-top border-bottom">
+          <small class="font-monospace text-body-secondary text-uppercase">html</small>
+          <div class="d-flex ms-auto">
+            <button type="button" class="btn-edit text-nowrap" aria-label="Try it on StackBlitz" data-bs-original-title="Try it on StackBlitz">
+              <svg class="bi" aria-hidden="true"><use xlink:href="#lightning-charge-fill"></use></svg>
+            </button>
+            <button type="button" class="btn-clipboard mt-0 me-0" aria-label="Copy to clipboard" data-bs-original-title="Copy to clipboard">
+              <svg class="bi" aria-hidden="true"><use xlink:href="#clipboard"></use></svg>
+            </button>
+          </div>
+        </div><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-html" data-lang="html"><span class="line"><span class="cl"><span class="p">&lt;</span><span class="nt">a</span> <span class="na">class</span><span class="o">=</span><span class="s">"btn btn-primary"</span> <span class="na">data-bs-toggle</span><span class="o">=</span><span class="s">"offcanvas"</span> <span class="na">href</span><span class="o">=</span><span class="s">"#offcanvasExample"</span> <span class="na">role</span><span class="o">=</span><span class="s">"button"</span> <span class="na">aria-controls</span><span class="o">=</span><span class="s">"offcanvasExample"</span><span class="p">&gt;</span>
+  </span></span><span class="line"><span class="cl">  Link with href
+  </span></span><span class="line"><span class="cl"><span class="p">&lt;/</span><span class="nt">a</span><span class="p">&gt;</span>
+  </span></span><span class="line"><span class="cl"><span class="p">&lt;</span><span class="nt">button</span> <span class="na">class</span><span class="o">=</span><span class="s">"btn btn-primary"</span> <span class="na">type</span><span class="o">=</span><span class="s">"button"</span> <span class="na">data-bs-toggle</span><span class="o">=</span><span class="s">"offcanvas"</span> <span class="na">data-bs-target</span><span class="o">=</span><span class="s">"#offcanvasExample"</span> <span class="na">aria-controls</span><span class="o">=</span><span class="s">"offcanvasExample"</span><span class="p">&gt;</span>
+  </span></span><span class="line"><span class="cl">  Button with data-bs-target
+  </span></span><span class="line"><span class="cl"><span class="p">&lt;/</span><span class="nt">button</span><span class="p">&gt;</span>
+  </span></span><span class="line"><span class="cl">
+  </span></span><span class="line"><span class="cl"><span class="p">&lt;</span><span class="nt">div</span> <span class="na">class</span><span class="o">=</span><span class="s">"offcanvas offcanvas-start"</span> <span class="na">tabindex</span><span class="o">=</span><span class="s">"-1"</span> <span class="na">id</span><span class="o">=</span><span class="s">"offcanvasExample"</span> <span class="na">aria-labelledby</span><span class="o">=</span><span class="s">"offcanvasExampleLabel"</span><span class="p">&gt;</span>
+  </span></span><span class="line"><span class="cl">  <span class="p">&lt;</span><span class="nt">div</span> <span class="na">class</span><span class="o">=</span><span class="s">"offcanvas-header"</span><span class="p">&gt;</span>
+  </span></span><span class="line"><span class="cl">    <span class="p">&lt;</span><span class="nt">h5</span> <span class="na">class</span><span class="o">=</span><span class="s">"offcanvas-title"</span> <span class="na">id</span><span class="o">=</span><span class="s">"offcanvasExampleLabel"</span><span class="p">&gt;</span>Offcanvas<span class="p">&lt;/</span><span class="nt">h5</span><span class="p">&gt;</span>
+  </span></span><span class="line"><span class="cl">    <span class="p">&lt;</span><span class="nt">button</span> <span class="na">type</span><span class="o">=</span><span class="s">"button"</span> <span class="na">class</span><span class="o">=</span><span class="s">"btn-close"</span> <span class="na">data-bs-dismiss</span><span class="o">=</span><span class="s">"offcanvas"</span> <span class="na">aria-label</span><span class="o">=</span><span class="s">"Close"</span><span class="p">&gt;&lt;/</span><span class="nt">button</span><span class="p">&gt;</span>
+  </span></span><span class="line"><span class="cl">  <span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
+  </span></span><span class="line"><span class="cl">  <span class="p">&lt;</span><span class="nt">div</span> <span class="na">class</span><span class="o">=</span><span class="s">"offcanvas-body"</span><span class="p">&gt;</span>
+  </span></span><span class="line"><span class="cl">    <span class="p">&lt;</span><span class="nt">div</span><span class="p">&gt;</span>
+  </span></span><span class="line"><span class="cl">      Some text as placeholder. In real life you can have the elements you have chosen. Like, text, images, lists, etc.
+  </span></span><span class="line"><span class="cl">    <span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
+  </span></span><span class="line"><span class="cl">    <span class="p">&lt;</span><span class="nt">div</span> <span class="na">class</span><span class="o">=</span><span class="s">"dropdown mt-3"</span><span class="p">&gt;</span>
+  </span></span><span class="line"><span class="cl">      <span class="p">&lt;</span><span class="nt">button</span> <span class="na">class</span><span class="o">=</span><span class="s">"btn btn-secondary dropdown-toggle"</span> <span class="na">type</span><span class="o">=</span><span class="s">"button"</span> <span class="na">data-bs-toggle</span><span class="o">=</span><span class="s">"dropdown"</span><span class="p">&gt;</span>
+  </span></span><span class="line"><span class="cl">        Dropdown button
+  </span></span><span class="line"><span class="cl">      <span class="p">&lt;/</span><span class="nt">button</span><span class="p">&gt;</span>
+  </span></span><span class="line"><span class="cl">      <span class="p">&lt;</span><span class="nt">ul</span> <span class="na">class</span><span class="o">=</span><span class="s">"dropdown-menu"</span><span class="p">&gt;</span>
+  </span></span><span class="line"><span class="cl">        <span class="p">&lt;</span><span class="nt">li</span><span class="p">&gt;&lt;</span><span class="nt">a</span> <span class="na">class</span><span class="o">=</span><span class="s">"dropdown-item"</span> <span class="na">href</span><span class="o">=</span><span class="s">"#"</span><span class="p">&gt;</span>Action<span class="p">&lt;/</span><span class="nt">a</span><span class="p">&gt;&lt;/</span><span class="nt">li</span><span class="p">&gt;</span>
+  </span></span><span class="line"><span class="cl">        <span class="p">&lt;</span><span class="nt">li</span><span class="p">&gt;&lt;</span><span class="nt">a</span> <span class="na">class</span><span class="o">=</span><span class="s">"dropdown-item"</span> <span class="na">href</span><span class="o">=</span><span class="s">"#"</span><span class="p">&gt;</span>Another action<span class="p">&lt;/</span><span class="nt">a</span><span class="p">&gt;&lt;/</span><span class="nt">li</span><span class="p">&gt;</span>
+  </span></span><span class="line"><span class="cl">        <span class="p">&lt;</span><span class="nt">li</span><span class="p">&gt;&lt;</span><span class="nt">a</span> <span class="na">class</span><span class="o">=</span><span class="s">"dropdown-item"</span> <span class="na">href</span><span class="o">=</span><span class="s">"#"</span><span class="p">&gt;</span>Something else here<span class="p">&lt;/</span><span class="nt">a</span><span class="p">&gt;&lt;/</span><span class="nt">li</span><span class="p">&gt;</span>
+  </span></span><span class="line"><span class="cl">      <span class="p">&lt;/</span><span class="nt">ul</span><span class="p">&gt;</span>
+  </span></span><span class="line"><span class="cl">    <span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
+  </span></span><span class="line"><span class="cl">  <span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
+  </span></span><span class="line"><span class="cl"><span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span></span></span></code></pre></div>
+  </div>
+  
+  <h3 id="body-scrolling">Body scrolling <a class="anchor-link" href="#body-scrolling" aria-label="Link to this section: Body scrolling"></a></h3>
+  <p>Scrolling the <code>&lt;body&gt;</code> element is disabled when an offcanvas and its backdrop are visible. Use the <code>data-bs-scroll</code> attribute to enable <code>&lt;body&gt;</code> scrolling.</p>
+  <div class="bd-example-snippet bd-code-snippet">
+    <div class="bd-example m-0 border-0">
+      
+  <button class="btn btn-primary" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasScrolling" aria-controls="offcanvasScrolling">Enable body scrolling</button>
+  
+  <div class="offcanvas offcanvas-start" data-bs-scroll="true" data-bs-backdrop="false" tabindex="-1" id="offcanvasScrolling" aria-labelledby="offcanvasScrollingLabel">
+    <div class="offcanvas-header">
+      <h5 class="offcanvas-title" id="offcanvasScrollingLabel">Offcanvas with body scrolling</h5>
+      <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+    </div>
+    <div class="offcanvas-body">
+      <p>Try scrolling the rest of the page to see this option in action.</p>
+    </div>
+  </div>
+  
+    </div><div class="d-flex align-items-center highlight-toolbar ps-3 pe-2 py-1 border-0 border-top border-bottom">
+          <small class="font-monospace text-body-secondary text-uppercase">html</small>
+          <div class="d-flex ms-auto">
+            <button type="button" class="btn-edit text-nowrap" aria-label="Try it on StackBlitz" data-bs-original-title="Try it on StackBlitz">
+              <svg class="bi" aria-hidden="true"><use xlink:href="#lightning-charge-fill"></use></svg>
+            </button>
+            <button type="button" class="btn-clipboard mt-0 me-0" aria-label="Copy to clipboard" data-bs-original-title="Copy to clipboard">
+              <svg class="bi" aria-hidden="true"><use xlink:href="#clipboard"></use></svg>
+            </button>
+          </div>
+        </div><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-html" data-lang="html"><span class="line"><span class="cl"><span class="p">&lt;</span><span class="nt">button</span> <span class="na">class</span><span class="o">=</span><span class="s">"btn btn-primary"</span> <span class="na">type</span><span class="o">=</span><span class="s">"button"</span> <span class="na">data-bs-toggle</span><span class="o">=</span><span class="s">"offcanvas"</span> <span class="na">data-bs-target</span><span class="o">=</span><span class="s">"#offcanvasScrolling"</span> <span class="na">aria-controls</span><span class="o">=</span><span class="s">"offcanvasScrolling"</span><span class="p">&gt;</span>Enable body scrolling<span class="p">&lt;/</span><span class="nt">button</span><span class="p">&gt;</span>
+  </span></span><span class="line"><span class="cl">
+  </span></span><span class="line"><span class="cl"><span class="p">&lt;</span><span class="nt">div</span> <span class="na">class</span><span class="o">=</span><span class="s">"offcanvas offcanvas-start"</span> <span class="na">data-bs-scroll</span><span class="o">=</span><span class="s">"true"</span> <span class="na">data-bs-backdrop</span><span class="o">=</span><span class="s">"false"</span> <span class="na">tabindex</span><span class="o">=</span><span class="s">"-1"</span> <span class="na">id</span><span class="o">=</span><span class="s">"offcanvasScrolling"</span> <span class="na">aria-labelledby</span><span class="o">=</span><span class="s">"offcanvasScrollingLabel"</span><span class="p">&gt;</span>
+  </span></span><span class="line"><span class="cl">  <span class="p">&lt;</span><span class="nt">div</span> <span class="na">class</span><span class="o">=</span><span class="s">"offcanvas-header"</span><span class="p">&gt;</span>
+  </span></span><span class="line"><span class="cl">    <span class="p">&lt;</span><span class="nt">h5</span> <span class="na">class</span><span class="o">=</span><span class="s">"offcanvas-title"</span> <span class="na">id</span><span class="o">=</span><span class="s">"offcanvasScrollingLabel"</span><span class="p">&gt;</span>Offcanvas with body scrolling<span class="p">&lt;/</span><span class="nt">h5</span><span class="p">&gt;</span>
+  </span></span><span class="line"><span class="cl">    <span class="p">&lt;</span><span class="nt">button</span> <span class="na">type</span><span class="o">=</span><span class="s">"button"</span> <span class="na">class</span><span class="o">=</span><span class="s">"btn-close"</span> <span class="na">data-bs-dismiss</span><span class="o">=</span><span class="s">"offcanvas"</span> <span class="na">aria-label</span><span class="o">=</span><span class="s">"Close"</span><span class="p">&gt;&lt;/</span><span class="nt">button</span><span class="p">&gt;</span>
+  </span></span><span class="line"><span class="cl">  <span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
+  </span></span><span class="line"><span class="cl">  <span class="p">&lt;</span><span class="nt">div</span> <span class="na">class</span><span class="o">=</span><span class="s">"offcanvas-body"</span><span class="p">&gt;</span>
+  </span></span><span class="line"><span class="cl">    <span class="p">&lt;</span><span class="nt">p</span><span class="p">&gt;</span>Try scrolling the rest of the page to see this option in action.<span class="p">&lt;/</span><span class="nt">p</span><span class="p">&gt;</span>
+  </span></span><span class="line"><span class="cl">  <span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
+  </span></span><span class="line"><span class="cl"><span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span></span></span></code></pre></div>
+  </div>
+  
+  <h3 id="body-scrolling-and-backdrop">Body scrolling and backdrop <a class="anchor-link" href="#body-scrolling-and-backdrop" aria-label="Link to this section: Body scrolling and backdrop"></a></h3>
+  <p>You can also enable <code>&lt;body&gt;</code> scrolling with a visible backdrop.</p>
+  <div class="bd-example-snippet bd-code-snippet">
+    <div class="bd-example m-0 border-0">
+      
+  <button class="btn btn-primary" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasWithBothOptions" aria-controls="offcanvasWithBothOptions">Enable both scrolling &amp; backdrop</button>
+  
+  <div class="offcanvas offcanvas-start" data-bs-scroll="true" tabindex="-1" id="offcanvasWithBothOptions" aria-labelledby="offcanvasWithBothOptionsLabel">
+    <div class="offcanvas-header">
+      <h5 class="offcanvas-title" id="offcanvasWithBothOptionsLabel">Backdrop with scrolling</h5>
+      <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+    </div>
+    <div class="offcanvas-body">
+      <p>Try scrolling the rest of the page to see this option in action.</p>
+    </div>
+  </div>
+  
+    </div><div class="d-flex align-items-center highlight-toolbar ps-3 pe-2 py-1 border-0 border-top border-bottom">
+          <small class="font-monospace text-body-secondary text-uppercase">html</small>
+          <div class="d-flex ms-auto">
+            <button type="button" class="btn-edit text-nowrap" aria-label="Try it on StackBlitz" data-bs-original-title="Try it on StackBlitz">
+              <svg class="bi" aria-hidden="true"><use xlink:href="#lightning-charge-fill"></use></svg>
+            </button>
+            <button type="button" class="btn-clipboard mt-0 me-0" aria-label="Copy to clipboard" data-bs-original-title="Copy to clipboard">
+              <svg class="bi" aria-hidden="true"><use xlink:href="#clipboard"></use></svg>
+            </button>
+          </div>
+        </div><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-html" data-lang="html"><span class="line"><span class="cl"><span class="p">&lt;</span><span class="nt">button</span> <span class="na">class</span><span class="o">=</span><span class="s">"btn btn-primary"</span> <span class="na">type</span><span class="o">=</span><span class="s">"button"</span> <span class="na">data-bs-toggle</span><span class="o">=</span><span class="s">"offcanvas"</span> <span class="na">data-bs-target</span><span class="o">=</span><span class="s">"#offcanvasWithBothOptions"</span> <span class="na">aria-controls</span><span class="o">=</span><span class="s">"offcanvasWithBothOptions"</span><span class="p">&gt;</span>Enable both scrolling <span class="err">&amp;</span> backdrop<span class="p">&lt;/</span><span class="nt">button</span><span class="p">&gt;</span>
+  </span></span><span class="line"><span class="cl">
+  </span></span><span class="line"><span class="cl"><span class="p">&lt;</span><span class="nt">div</span> <span class="na">class</span><span class="o">=</span><span class="s">"offcanvas offcanvas-start"</span> <span class="na">data-bs-scroll</span><span class="o">=</span><span class="s">"true"</span> <span class="na">tabindex</span><span class="o">=</span><span class="s">"-1"</span> <span class="na">id</span><span class="o">=</span><span class="s">"offcanvasWithBothOptions"</span> <span class="na">aria-labelledby</span><span class="o">=</span><span class="s">"offcanvasWithBothOptionsLabel"</span><span class="p">&gt;</span>
+  </span></span><span class="line"><span class="cl">  <span class="p">&lt;</span><span class="nt">div</span> <span class="na">class</span><span class="o">=</span><span class="s">"offcanvas-header"</span><span class="p">&gt;</span>
+  </span></span><span class="line"><span class="cl">    <span class="p">&lt;</span><span class="nt">h5</span> <span class="na">class</span><span class="o">=</span><span class="s">"offcanvas-title"</span> <span class="na">id</span><span class="o">=</span><span class="s">"offcanvasWithBothOptionsLabel"</span><span class="p">&gt;</span>Backdrop with scrolling<span class="p">&lt;/</span><span class="nt">h5</span><span class="p">&gt;</span>
+  </span></span><span class="line"><span class="cl">    <span class="p">&lt;</span><span class="nt">button</span> <span class="na">type</span><span class="o">=</span><span class="s">"button"</span> <span class="na">class</span><span class="o">=</span><span class="s">"btn-close"</span> <span class="na">data-bs-dismiss</span><span class="o">=</span><span class="s">"offcanvas"</span> <span class="na">aria-label</span><span class="o">=</span><span class="s">"Close"</span><span class="p">&gt;&lt;/</span><span class="nt">button</span><span class="p">&gt;</span>
+  </span></span><span class="line"><span class="cl">  <span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
+  </span></span><span class="line"><span class="cl">  <span class="p">&lt;</span><span class="nt">div</span> <span class="na">class</span><span class="o">=</span><span class="s">"offcanvas-body"</span><span class="p">&gt;</span>
+  </span></span><span class="line"><span class="cl">    <span class="p">&lt;</span><span class="nt">p</span><span class="p">&gt;</span>Try scrolling the rest of the page to see this option in action.<span class="p">&lt;/</span><span class="nt">p</span><span class="p">&gt;</span>
+  </span></span><span class="line"><span class="cl">  <span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
+  </span></span><span class="line"><span class="cl"><span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span></span></span></code></pre></div>
+  </div>
+  
+  <h3 id="static-backdrop">Static backdrop <a class="anchor-link" href="#static-backdrop" aria-label="Link to this section: Static backdrop"></a></h3>
+  <p>When backdrop is set to static, the offcanvas will not close when clicking outside of it.</p>
+  <div class="bd-example-snippet bd-code-snippet">
+    <div class="bd-example m-0 border-0">
+      
+  <button class="btn btn-primary" type="button" data-bs-toggle="offcanvas" data-bs-target="#staticBackdrop" aria-controls="staticBackdrop">
+    Toggle static offcanvas
+  </button>
+  
+  <div class="offcanvas offcanvas-start" data-bs-backdrop="static" tabindex="-1" id="staticBackdrop" aria-labelledby="staticBackdropLabel">
+    <div class="offcanvas-header">
+      <h5 class="offcanvas-title" id="staticBackdropLabel">Offcanvas</h5>
+      <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+    </div>
+    <div class="offcanvas-body">
+      <div>
+        I will not close if you click outside of me.
+      </div>
+    </div>
+  </div>
+  
+    </div><div class="d-flex align-items-center highlight-toolbar ps-3 pe-2 py-1 border-0 border-top border-bottom">
+          <small class="font-monospace text-body-secondary text-uppercase">html</small>
+          <div class="d-flex ms-auto">
+            <button type="button" class="btn-edit text-nowrap" aria-label="Try it on StackBlitz" data-bs-original-title="Try it on StackBlitz">
+              <svg class="bi" aria-hidden="true"><use xlink:href="#lightning-charge-fill"></use></svg>
+            </button>
+            <button type="button" class="btn-clipboard mt-0 me-0" aria-label="Copy to clipboard" data-bs-original-title="Copy to clipboard">
+              <svg class="bi" aria-hidden="true"><use xlink:href="#clipboard"></use></svg>
+            </button>
+          </div>
+        </div><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-html" data-lang="html"><span class="line"><span class="cl"><span class="p">&lt;</span><span class="nt">button</span> <span class="na">class</span><span class="o">=</span><span class="s">"btn btn-primary"</span> <span class="na">type</span><span class="o">=</span><span class="s">"button"</span> <span class="na">data-bs-toggle</span><span class="o">=</span><span class="s">"offcanvas"</span> <span class="na">data-bs-target</span><span class="o">=</span><span class="s">"#staticBackdrop"</span> <span class="na">aria-controls</span><span class="o">=</span><span class="s">"staticBackdrop"</span><span class="p">&gt;</span>
+  </span></span><span class="line"><span class="cl">  Toggle static offcanvas
+  </span></span><span class="line"><span class="cl"><span class="p">&lt;/</span><span class="nt">button</span><span class="p">&gt;</span>
+  </span></span><span class="line"><span class="cl">
+  </span></span><span class="line"><span class="cl"><span class="p">&lt;</span><span class="nt">div</span> <span class="na">class</span><span class="o">=</span><span class="s">"offcanvas offcanvas-start"</span> <span class="na">data-bs-backdrop</span><span class="o">=</span><span class="s">"static"</span> <span class="na">tabindex</span><span class="o">=</span><span class="s">"-1"</span> <span class="na">id</span><span class="o">=</span><span class="s">"staticBackdrop"</span> <span class="na">aria-labelledby</span><span class="o">=</span><span class="s">"staticBackdropLabel"</span><span class="p">&gt;</span>
+  </span></span><span class="line"><span class="cl">  <span class="p">&lt;</span><span class="nt">div</span> <span class="na">class</span><span class="o">=</span><span class="s">"offcanvas-header"</span><span class="p">&gt;</span>
+  </span></span><span class="line"><span class="cl">    <span class="p">&lt;</span><span class="nt">h5</span> <span class="na">class</span><span class="o">=</span><span class="s">"offcanvas-title"</span> <span class="na">id</span><span class="o">=</span><span class="s">"staticBackdropLabel"</span><span class="p">&gt;</span>Offcanvas<span class="p">&lt;/</span><span class="nt">h5</span><span class="p">&gt;</span>
+  </span></span><span class="line"><span class="cl">    <span class="p">&lt;</span><span class="nt">button</span> <span class="na">type</span><span class="o">=</span><span class="s">"button"</span> <span class="na">class</span><span class="o">=</span><span class="s">"btn-close"</span> <span class="na">data-bs-dismiss</span><span class="o">=</span><span class="s">"offcanvas"</span> <span class="na">aria-label</span><span class="o">=</span><span class="s">"Close"</span><span class="p">&gt;&lt;/</span><span class="nt">button</span><span class="p">&gt;</span>
+  </span></span><span class="line"><span class="cl">  <span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
+  </span></span><span class="line"><span class="cl">  <span class="p">&lt;</span><span class="nt">div</span> <span class="na">class</span><span class="o">=</span><span class="s">"offcanvas-body"</span><span class="p">&gt;</span>
+  </span></span><span class="line"><span class="cl">    <span class="p">&lt;</span><span class="nt">div</span><span class="p">&gt;</span>
+  </span></span><span class="line"><span class="cl">      I will not close if you click outside of me.
+  </span></span><span class="line"><span class="cl">    <span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
+  </span></span><span class="line"><span class="cl">  <span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
+  </span></span><span class="line"><span class="cl"><span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span></span></span></code></pre></div>
+  </div>
+  
+  <h2 id="dark-offcanvas">Dark offcanvas <a class="anchor-link" href="#dark-offcanvas" aria-label="Link to this section: Dark offcanvas"></a></h2>
+  <p><small class="d-inline-flex mb-3 px-2 py-1 fw-semibold text-warning-emphasis bg-warning-subtle border border-warning-subtle rounded-2">Deprecated in v5.3.0</small>
+   <small class="d-inline-flex mb-3 px-2 py-1 fw-semibold text-success-emphasis bg-success-subtle border border-success-subtle rounded-2">Added in v5.2.0</small>
+  </p>
+  <p>Change the appearance of offcanvases with utilities to better match them to different contexts like dark navbars. Here we add <code>.text-bg-dark</code> to the <code>.offcanvas</code> and <code>.btn-close-white</code> to <code>.btn-close</code> for proper styling with a dark offcanvas. If you have dropdowns within, consider also adding <code>.dropdown-menu-dark</code> to <code>.dropdown-menu</code>.</p>
+  <div class="bd-callout bd-callout-warning">
+  <strong>Heads up!</strong> Dark variants for components were deprecated in v5.3.0 with the introduction of color modes. Instead of manually adding classes mentioned above, set <code>data-bs-theme="dark"</code> on the root element, a parent wrapper, or the component itself.
+  </div>
+  
+  <div class="bd-example-snippet bd-code-snippet">
+    <div class="bd-example m-0 border-0 bd-example-offcanvas p-0 bg-body-secondary overflow-hidden">
+      
+  <div class="offcanvas offcanvas-start show text-bg-dark" tabindex="-1" id="offcanvasDark" aria-labelledby="offcanvasDarkLabel">
+    <div class="offcanvas-header">
+      <h5 class="offcanvas-title" id="offcanvasDarkLabel">Offcanvas</h5>
+      <button type="button" class="btn-close btn-close-white" data-bs-dismiss="offcanvasDark" aria-label="Close"></button>
+    </div>
+    <div class="offcanvas-body">
+      <p>Place offcanvas content here.</p>
+    </div>
+  </div>
+  
+    </div><div class="d-flex align-items-center highlight-toolbar ps-3 pe-2 py-1 border-0 border-top border-bottom">
+          <small class="font-monospace text-body-secondary text-uppercase">html</small>
+          <div class="d-flex ms-auto">
+            <button type="button" class="btn-edit text-nowrap" aria-label="Try it on StackBlitz" data-bs-original-title="Try it on StackBlitz">
+              <svg class="bi" aria-hidden="true"><use xlink:href="#lightning-charge-fill"></use></svg>
+            </button>
+            <button type="button" class="btn-clipboard mt-0 me-0" aria-label="Copy to clipboard" data-bs-original-title="Copy to clipboard">
+              <svg class="bi" aria-hidden="true"><use xlink:href="#clipboard"></use></svg>
+            </button>
+          </div>
+        </div><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-html" data-lang="html"><span class="line"><span class="cl"><span class="p">&lt;</span><span class="nt">div</span> <span class="na">class</span><span class="o">=</span><span class="s">"offcanvas offcanvas-start show text-bg-dark"</span> <span class="na">tabindex</span><span class="o">=</span><span class="s">"-1"</span> <span class="na">id</span><span class="o">=</span><span class="s">"offcanvasDark"</span> <span class="na">aria-labelledby</span><span class="o">=</span><span class="s">"offcanvasDarkLabel"</span><span class="p">&gt;</span>
+  </span></span><span class="line"><span class="cl">  <span class="p">&lt;</span><span class="nt">div</span> <span class="na">class</span><span class="o">=</span><span class="s">"offcanvas-header"</span><span class="p">&gt;</span>
+  </span></span><span class="line"><span class="cl">    <span class="p">&lt;</span><span class="nt">h5</span> <span class="na">class</span><span class="o">=</span><span class="s">"offcanvas-title"</span> <span class="na">id</span><span class="o">=</span><span class="s">"offcanvasDarkLabel"</span><span class="p">&gt;</span>Offcanvas<span class="p">&lt;/</span><span class="nt">h5</span><span class="p">&gt;</span>
+  </span></span><span class="line"><span class="cl">    <span class="p">&lt;</span><span class="nt">button</span> <span class="na">type</span><span class="o">=</span><span class="s">"button"</span> <span class="na">class</span><span class="o">=</span><span class="s">"btn-close btn-close-white"</span> <span class="na">data-bs-dismiss</span><span class="o">=</span><span class="s">"offcanvasDark"</span> <span class="na">aria-label</span><span class="o">=</span><span class="s">"Close"</span><span class="p">&gt;&lt;/</span><span class="nt">button</span><span class="p">&gt;</span>
+  </span></span><span class="line"><span class="cl">  <span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
+  </span></span><span class="line"><span class="cl">  <span class="p">&lt;</span><span class="nt">div</span> <span class="na">class</span><span class="o">=</span><span class="s">"offcanvas-body"</span><span class="p">&gt;</span>
+  </span></span><span class="line"><span class="cl">    <span class="p">&lt;</span><span class="nt">p</span><span class="p">&gt;</span>Place offcanvas content here.<span class="p">&lt;/</span><span class="nt">p</span><span class="p">&gt;</span>
+  </span></span><span class="line"><span class="cl">  <span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
+  </span></span><span class="line"><span class="cl"><span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span></span></span></code></pre></div>
+  </div>
+  
+  <h2 id="responsive">Responsive <a class="anchor-link" href="#responsive" aria-label="Link to this section: Responsive"></a></h2>
+  <small class="d-inline-flex mb-3 px-2 py-1 fw-semibold text-success-emphasis bg-success-subtle border border-success-subtle rounded-2">Added in v5.2.0</small>
+  
+  <p>Responsive offcanvas classes hide content outside the viewport from a specified breakpoint and down. Above that breakpoint, the contents within will behave as usual. For example, <code>.offcanvas-lg</code> hides content in an offcanvas below the <code>lg</code> breakpoint, but shows the content above the <code>lg</code> breakpoint.</p>
+  <div class="bd-example-snippet bd-code-snippet">
+    <div class="bd-example m-0 border-0">
+      
+  <button class="btn btn-primary d-lg-none" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasResponsive" aria-controls="offcanvasResponsive">Toggle offcanvas</button>
+  
+  <div class="alert alert-info d-none d-lg-block">Resize your browser to show the responsive offcanvas toggle.</div>
+  
+  <div class="offcanvas-lg offcanvas-end" tabindex="-1" id="offcanvasResponsive" aria-labelledby="offcanvasResponsiveLabel">
+    <div class="offcanvas-header">
+      <h5 class="offcanvas-title" id="offcanvasResponsiveLabel">Responsive offcanvas</h5>
+      <button type="button" class="btn-close" data-bs-dismiss="offcanvas" data-bs-target="#offcanvasResponsive" aria-label="Close"></button>
+    </div>
+    <div class="offcanvas-body">
+      <p class="mb-0">This is content within an <code>.offcanvas-lg</code>.</p>
+    </div>
+  </div>
+  
+    </div><div class="d-flex align-items-center highlight-toolbar ps-3 pe-2 py-1 border-0 border-top border-bottom">
+          <small class="font-monospace text-body-secondary text-uppercase">html</small>
+          <div class="d-flex ms-auto">
+            <button type="button" class="btn-edit text-nowrap" aria-label="Try it on StackBlitz" data-bs-original-title="Try it on StackBlitz">
+              <svg class="bi" aria-hidden="true"><use xlink:href="#lightning-charge-fill"></use></svg>
+            </button>
+            <button type="button" class="btn-clipboard mt-0 me-0" aria-label="Copy to clipboard" data-bs-original-title="Copy to clipboard">
+              <svg class="bi" aria-hidden="true"><use xlink:href="#clipboard"></use></svg>
+            </button>
+          </div>
+        </div><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-html" data-lang="html"><span class="line"><span class="cl"><span class="p">&lt;</span><span class="nt">button</span> <span class="na">class</span><span class="o">=</span><span class="s">"btn btn-primary d-lg-none"</span> <span class="na">type</span><span class="o">=</span><span class="s">"button"</span> <span class="na">data-bs-toggle</span><span class="o">=</span><span class="s">"offcanvas"</span> <span class="na">data-bs-target</span><span class="o">=</span><span class="s">"#offcanvasResponsive"</span> <span class="na">aria-controls</span><span class="o">=</span><span class="s">"offcanvasResponsive"</span><span class="p">&gt;</span>Toggle offcanvas<span class="p">&lt;/</span><span class="nt">button</span><span class="p">&gt;</span>
+  </span></span><span class="line"><span class="cl">
+  </span></span><span class="line"><span class="cl"><span class="p">&lt;</span><span class="nt">div</span> <span class="na">class</span><span class="o">=</span><span class="s">"alert alert-info d-none d-lg-block"</span><span class="p">&gt;</span>Resize your browser to show the responsive offcanvas toggle.<span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
+  </span></span><span class="line"><span class="cl">
+  </span></span><span class="line"><span class="cl"><span class="p">&lt;</span><span class="nt">div</span> <span class="na">class</span><span class="o">=</span><span class="s">"offcanvas-lg offcanvas-end"</span> <span class="na">tabindex</span><span class="o">=</span><span class="s">"-1"</span> <span class="na">id</span><span class="o">=</span><span class="s">"offcanvasResponsive"</span> <span class="na">aria-labelledby</span><span class="o">=</span><span class="s">"offcanvasResponsiveLabel"</span><span class="p">&gt;</span>
+  </span></span><span class="line"><span class="cl">  <span class="p">&lt;</span><span class="nt">div</span> <span class="na">class</span><span class="o">=</span><span class="s">"offcanvas-header"</span><span class="p">&gt;</span>
+  </span></span><span class="line"><span class="cl">    <span class="p">&lt;</span><span class="nt">h5</span> <span class="na">class</span><span class="o">=</span><span class="s">"offcanvas-title"</span> <span class="na">id</span><span class="o">=</span><span class="s">"offcanvasResponsiveLabel"</span><span class="p">&gt;</span>Responsive offcanvas<span class="p">&lt;/</span><span class="nt">h5</span><span class="p">&gt;</span>
+  </span></span><span class="line"><span class="cl">    <span class="p">&lt;</span><span class="nt">button</span> <span class="na">type</span><span class="o">=</span><span class="s">"button"</span> <span class="na">class</span><span class="o">=</span><span class="s">"btn-close"</span> <span class="na">data-bs-dismiss</span><span class="o">=</span><span class="s">"offcanvas"</span> <span class="na">data-bs-target</span><span class="o">=</span><span class="s">"#offcanvasResponsive"</span> <span class="na">aria-label</span><span class="o">=</span><span class="s">"Close"</span><span class="p">&gt;&lt;/</span><span class="nt">button</span><span class="p">&gt;</span>
+  </span></span><span class="line"><span class="cl">  <span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
+  </span></span><span class="line"><span class="cl">  <span class="p">&lt;</span><span class="nt">div</span> <span class="na">class</span><span class="o">=</span><span class="s">"offcanvas-body"</span><span class="p">&gt;</span>
+  </span></span><span class="line"><span class="cl">    <span class="p">&lt;</span><span class="nt">p</span> <span class="na">class</span><span class="o">=</span><span class="s">"mb-0"</span><span class="p">&gt;</span>This is content within an <span class="p">&lt;</span><span class="nt">code</span><span class="p">&gt;</span>.offcanvas-lg<span class="p">&lt;/</span><span class="nt">code</span><span class="p">&gt;</span>.<span class="p">&lt;/</span><span class="nt">p</span><span class="p">&gt;</span>
+  </span></span><span class="line"><span class="cl">  <span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
+  </span></span><span class="line"><span class="cl"><span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span></span></span></code></pre></div>
+  </div>
+  
+  <p>Responsive offcanvas classes are available across for each breakpoint.</p>
+  <ul>
+  <li><code>.offcanvas</code></li>
+  <li><code>.offcanvas-sm</code></li>
+  <li><code>.offcanvas-md</code></li>
+  <li><code>.offcanvas-lg</code></li>
+  <li><code>.offcanvas-xl</code></li>
+  <li><code>.offcanvas-xxl</code></li>
+  </ul>
+  <h2 id="placement">Placement <a class="anchor-link" href="#placement" aria-label="Link to this section: Placement"></a></h2>
+  <p>There’s no default placement for offcanvas components, so you must add one of the modifier classes below.</p>
+  <ul>
+  <li><code>.offcanvas-start</code> places offcanvas on the left of the viewport (shown above)</li>
+  <li><code>.offcanvas-end</code> places offcanvas on the right of the viewport</li>
+  <li><code>.offcanvas-top</code> places offcanvas on the top of the viewport</li>
+  <li><code>.offcanvas-bottom</code> places offcanvas on the bottom of the viewport</li>
+  </ul>
+  <p>Try the top, right, and bottom examples out below.</p>
+  <div class="bd-example-snippet bd-code-snippet">
+    <div class="bd-example m-0 border-0">
+      
+  <button class="btn btn-primary" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasTop" aria-controls="offcanvasTop">Toggle top offcanvas</button>
+  
+  <div class="offcanvas offcanvas-top" tabindex="-1" id="offcanvasTop" aria-labelledby="offcanvasTopLabel">
+    <div class="offcanvas-header">
+      <h5 class="offcanvas-title" id="offcanvasTopLabel">Offcanvas top</h5>
+      <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+    </div>
+    <div class="offcanvas-body">
+      ...
+    </div>
+  </div>
+  
+    </div><div class="d-flex align-items-center highlight-toolbar ps-3 pe-2 py-1 border-0 border-top border-bottom">
+          <small class="font-monospace text-body-secondary text-uppercase">html</small>
+          <div class="d-flex ms-auto">
+            <button type="button" class="btn-edit text-nowrap" aria-label="Try it on StackBlitz" data-bs-original-title="Try it on StackBlitz">
+              <svg class="bi" aria-hidden="true"><use xlink:href="#lightning-charge-fill"></use></svg>
+            </button>
+            <button type="button" class="btn-clipboard mt-0 me-0" aria-label="Copy to clipboard" data-bs-original-title="Copy to clipboard">
+              <svg class="bi" aria-hidden="true"><use xlink:href="#clipboard"></use></svg>
+            </button>
+          </div>
+        </div><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-html" data-lang="html"><span class="line"><span class="cl"><span class="p">&lt;</span><span class="nt">button</span> <span class="na">class</span><span class="o">=</span><span class="s">"btn btn-primary"</span> <span class="na">type</span><span class="o">=</span><span class="s">"button"</span> <span class="na">data-bs-toggle</span><span class="o">=</span><span class="s">"offcanvas"</span> <span class="na">data-bs-target</span><span class="o">=</span><span class="s">"#offcanvasTop"</span> <span class="na">aria-controls</span><span class="o">=</span><span class="s">"offcanvasTop"</span><span class="p">&gt;</span>Toggle top offcanvas<span class="p">&lt;/</span><span class="nt">button</span><span class="p">&gt;</span>
+  </span></span><span class="line"><span class="cl">
+  </span></span><span class="line"><span class="cl"><span class="p">&lt;</span><span class="nt">div</span> <span class="na">class</span><span class="o">=</span><span class="s">"offcanvas offcanvas-top"</span> <span class="na">tabindex</span><span class="o">=</span><span class="s">"-1"</span> <span class="na">id</span><span class="o">=</span><span class="s">"offcanvasTop"</span> <span class="na">aria-labelledby</span><span class="o">=</span><span class="s">"offcanvasTopLabel"</span><span class="p">&gt;</span>
+  </span></span><span class="line"><span class="cl">  <span class="p">&lt;</span><span class="nt">div</span> <span class="na">class</span><span class="o">=</span><span class="s">"offcanvas-header"</span><span class="p">&gt;</span>
+  </span></span><span class="line"><span class="cl">    <span class="p">&lt;</span><span class="nt">h5</span> <span class="na">class</span><span class="o">=</span><span class="s">"offcanvas-title"</span> <span class="na">id</span><span class="o">=</span><span class="s">"offcanvasTopLabel"</span><span class="p">&gt;</span>Offcanvas top<span class="p">&lt;/</span><span class="nt">h5</span><span class="p">&gt;</span>
+  </span></span><span class="line"><span class="cl">    <span class="p">&lt;</span><span class="nt">button</span> <span class="na">type</span><span class="o">=</span><span class="s">"button"</span> <span class="na">class</span><span class="o">=</span><span class="s">"btn-close"</span> <span class="na">data-bs-dismiss</span><span class="o">=</span><span class="s">"offcanvas"</span> <span class="na">aria-label</span><span class="o">=</span><span class="s">"Close"</span><span class="p">&gt;&lt;/</span><span class="nt">button</span><span class="p">&gt;</span>
+  </span></span><span class="line"><span class="cl">  <span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
+  </span></span><span class="line"><span class="cl">  <span class="p">&lt;</span><span class="nt">div</span> <span class="na">class</span><span class="o">=</span><span class="s">"offcanvas-body"</span><span class="p">&gt;</span>
+  </span></span><span class="line"><span class="cl">    ...
+  </span></span><span class="line"><span class="cl">  <span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
+  </span></span><span class="line"><span class="cl"><span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span></span></span></code></pre></div>
+  </div>
+  
+  <div class="bd-example-snippet bd-code-snippet">
+    <div class="bd-example m-0 border-0">
+      
+  <button class="btn btn-primary" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasRight" aria-controls="offcanvasRight">Toggle right offcanvas</button>
+  
+  <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasRight" aria-labelledby="offcanvasRightLabel">
+    <div class="offcanvas-header">
+      <h5 class="offcanvas-title" id="offcanvasRightLabel">Offcanvas right</h5>
+      <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+    </div>
+    <div class="offcanvas-body">
+      ...
+    </div>
+  </div>
+  
+    </div><div class="d-flex align-items-center highlight-toolbar ps-3 pe-2 py-1 border-0 border-top border-bottom">
+          <small class="font-monospace text-body-secondary text-uppercase">html</small>
+          <div class="d-flex ms-auto">
+            <button type="button" class="btn-edit text-nowrap" aria-label="Try it on StackBlitz" data-bs-original-title="Try it on StackBlitz">
+              <svg class="bi" aria-hidden="true"><use xlink:href="#lightning-charge-fill"></use></svg>
+            </button>
+            <button type="button" class="btn-clipboard mt-0 me-0" aria-label="Copy to clipboard" data-bs-original-title="Copy to clipboard">
+              <svg class="bi" aria-hidden="true"><use xlink:href="#clipboard"></use></svg>
+            </button>
+          </div>
+        </div><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-html" data-lang="html"><span class="line"><span class="cl"><span class="p">&lt;</span><span class="nt">button</span> <span class="na">class</span><span class="o">=</span><span class="s">"btn btn-primary"</span> <span class="na">type</span><span class="o">=</span><span class="s">"button"</span> <span class="na">data-bs-toggle</span><span class="o">=</span><span class="s">"offcanvas"</span> <span class="na">data-bs-target</span><span class="o">=</span><span class="s">"#offcanvasRight"</span> <span class="na">aria-controls</span><span class="o">=</span><span class="s">"offcanvasRight"</span><span class="p">&gt;</span>Toggle right offcanvas<span class="p">&lt;/</span><span class="nt">button</span><span class="p">&gt;</span>
+  </span></span><span class="line"><span class="cl">
+  </span></span><span class="line"><span class="cl"><span class="p">&lt;</span><span class="nt">div</span> <span class="na">class</span><span class="o">=</span><span class="s">"offcanvas offcanvas-end"</span> <span class="na">tabindex</span><span class="o">=</span><span class="s">"-1"</span> <span class="na">id</span><span class="o">=</span><span class="s">"offcanvasRight"</span> <span class="na">aria-labelledby</span><span class="o">=</span><span class="s">"offcanvasRightLabel"</span><span class="p">&gt;</span>
+  </span></span><span class="line"><span class="cl">  <span class="p">&lt;</span><span class="nt">div</span> <span class="na">class</span><span class="o">=</span><span class="s">"offcanvas-header"</span><span class="p">&gt;</span>
+  </span></span><span class="line"><span class="cl">    <span class="p">&lt;</span><span class="nt">h5</span> <span class="na">class</span><span class="o">=</span><span class="s">"offcanvas-title"</span> <span class="na">id</span><span class="o">=</span><span class="s">"offcanvasRightLabel"</span><span class="p">&gt;</span>Offcanvas right<span class="p">&lt;/</span><span class="nt">h5</span><span class="p">&gt;</span>
+  </span></span><span class="line"><span class="cl">    <span class="p">&lt;</span><span class="nt">button</span> <span class="na">type</span><span class="o">=</span><span class="s">"button"</span> <span class="na">class</span><span class="o">=</span><span class="s">"btn-close"</span> <span class="na">data-bs-dismiss</span><span class="o">=</span><span class="s">"offcanvas"</span> <span class="na">aria-label</span><span class="o">=</span><span class="s">"Close"</span><span class="p">&gt;&lt;/</span><span class="nt">button</span><span class="p">&gt;</span>
+  </span></span><span class="line"><span class="cl">  <span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
+  </span></span><span class="line"><span class="cl">  <span class="p">&lt;</span><span class="nt">div</span> <span class="na">class</span><span class="o">=</span><span class="s">"offcanvas-body"</span><span class="p">&gt;</span>
+  </span></span><span class="line"><span class="cl">    ...
+  </span></span><span class="line"><span class="cl">  <span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
+  </span></span><span class="line"><span class="cl"><span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span></span></span></code></pre></div>
+  </div>
+  
+  <div class="bd-example-snippet bd-code-snippet">
+    <div class="bd-example m-0 border-0">
+      
+  <button class="btn btn-primary" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasBottom" aria-controls="offcanvasBottom">Toggle bottom offcanvas</button>
+  
+  <div class="offcanvas offcanvas-bottom" tabindex="-1" id="offcanvasBottom" aria-labelledby="offcanvasBottomLabel">
+    <div class="offcanvas-header">
+      <h5 class="offcanvas-title" id="offcanvasBottomLabel">Offcanvas bottom</h5>
+      <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+    </div>
+    <div class="offcanvas-body small">
+      ...
+    </div>
+  </div>
+  
+    </div><div class="d-flex align-items-center highlight-toolbar ps-3 pe-2 py-1 border-0 border-top border-bottom">
+          <small class="font-monospace text-body-secondary text-uppercase">html</small>
+          <div class="d-flex ms-auto">
+            <button type="button" class="btn-edit text-nowrap" aria-label="Try it on StackBlitz" data-bs-original-title="Try it on StackBlitz">
+              <svg class="bi" aria-hidden="true"><use xlink:href="#lightning-charge-fill"></use></svg>
+            </button>
+            <button type="button" class="btn-clipboard mt-0 me-0" aria-label="Copy to clipboard" data-bs-original-title="Copy to clipboard">
+              <svg class="bi" aria-hidden="true"><use xlink:href="#clipboard"></use></svg>
+            </button>
+          </div>
+        </div><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-html" data-lang="html"><span class="line"><span class="cl"><span class="p">&lt;</span><span class="nt">button</span> <span class="na">class</span><span class="o">=</span><span class="s">"btn btn-primary"</span> <span class="na">type</span><span class="o">=</span><span class="s">"button"</span> <span class="na">data-bs-toggle</span><span class="o">=</span><span class="s">"offcanvas"</span> <span class="na">data-bs-target</span><span class="o">=</span><span class="s">"#offcanvasBottom"</span> <span class="na">aria-controls</span><span class="o">=</span><span class="s">"offcanvasBottom"</span><span class="p">&gt;</span>Toggle bottom offcanvas<span class="p">&lt;/</span><span class="nt">button</span><span class="p">&gt;</span>
+  </span></span><span class="line"><span class="cl">
+  </span></span><span class="line"><span class="cl"><span class="p">&lt;</span><span class="nt">div</span> <span class="na">class</span><span class="o">=</span><span class="s">"offcanvas offcanvas-bottom"</span> <span class="na">tabindex</span><span class="o">=</span><span class="s">"-1"</span> <span class="na">id</span><span class="o">=</span><span class="s">"offcanvasBottom"</span> <span class="na">aria-labelledby</span><span class="o">=</span><span class="s">"offcanvasBottomLabel"</span><span class="p">&gt;</span>
+  </span></span><span class="line"><span class="cl">  <span class="p">&lt;</span><span class="nt">div</span> <span class="na">class</span><span class="o">=</span><span class="s">"offcanvas-header"</span><span class="p">&gt;</span>
+  </span></span><span class="line"><span class="cl">    <span class="p">&lt;</span><span class="nt">h5</span> <span class="na">class</span><span class="o">=</span><span class="s">"offcanvas-title"</span> <span class="na">id</span><span class="o">=</span><span class="s">"offcanvasBottomLabel"</span><span class="p">&gt;</span>Offcanvas bottom<span class="p">&lt;/</span><span class="nt">h5</span><span class="p">&gt;</span>
+  </span></span><span class="line"><span class="cl">    <span class="p">&lt;</span><span class="nt">button</span> <span class="na">type</span><span class="o">=</span><span class="s">"button"</span> <span class="na">class</span><span class="o">=</span><span class="s">"btn-close"</span> <span class="na">data-bs-dismiss</span><span class="o">=</span><span class="s">"offcanvas"</span> <span class="na">aria-label</span><span class="o">=</span><span class="s">"Close"</span><span class="p">&gt;&lt;/</span><span class="nt">button</span><span class="p">&gt;</span>
+  </span></span><span class="line"><span class="cl">  <span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
+  </span></span><span class="line"><span class="cl">  <span class="p">&lt;</span><span class="nt">div</span> <span class="na">class</span><span class="o">=</span><span class="s">"offcanvas-body small"</span><span class="p">&gt;</span>
+  </span></span><span class="line"><span class="cl">    ...
+  </span></span><span class="line"><span class="cl">  <span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
+  </span></span><span class="line"><span class="cl"><span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span></span></span></code></pre></div>
+  </div>
+  
+  <h2 id="accessibility">Accessibility <a class="anchor-link" href="#accessibility" aria-label="Link to this section: Accessibility"></a></h2>
+  <p>Since the offcanvas panel is conceptually a modal dialog, be sure to add <code>aria-labelledby="..."</code>—referencing the offcanvas title—to <code>.offcanvas</code>. Note that you don’t need to add <code>role="dialog"</code> since we already add it via JavaScript.</p>
+  <h2 id="css">CSS <a class="anchor-link" href="#css" aria-label="Link to this section: CSS"></a></h2>
+  <h3 id="variables">Variables <a class="anchor-link" href="#variables" aria-label="Link to this section: Variables"></a></h3>
+  <small class="d-inline-flex mb-3 px-2 py-1 fw-semibold text-success-emphasis bg-success-subtle border border-success-subtle rounded-2">Added in v5.2.0</small>
+  
+  <p>As part of Bootstrap’s evolving CSS variables approach, offcanvas now uses local CSS variables on <code>.offcanvas</code> for enhanced real-time customization. Values for the CSS variables are set via Sass, so Sass customization is still supported, too.</p>
+  <div class="bd-example-snippet bd-code-snippet bd-file-ref">
+      <div class="d-flex align-items-center highlight-toolbar ps-3 pe-2 py-1 border-bottom">
+        <a class="font-monospace link-secondary link-underline-secondary link-underline-opacity-0 link-underline-opacity-100-hover small" href="https://github.com/twbs/bootstrap/blob/v5.3.3/scss/_offcanvas.scss">scss/_offcanvas.scss</a>
+        <div class="d-flex ms-auto">
+          <button type="button" class="btn-clipboard mt-0 me-0" aria-label="Copy to clipboard" data-bs-original-title="Copy to clipboard">
+            <svg class="bi" aria-hidden="true"><use xlink:href="#clipboard"></use></svg>
+          </button>
+        </div>
+      </div><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-scss" data-lang="scss"><span class="line"><span class="cl"><span class="na">--#{$prefix}offcanvas-zindex</span><span class="o">:</span> <span class="si">#{</span><span class="nv">$zindex-offcanvas</span><span class="si">}</span><span class="p">;</span>
+  </span></span><span class="line"><span class="cl"><span class="na">--#{$prefix}offcanvas-width</span><span class="o">:</span> <span class="si">#{</span><span class="nv">$offcanvas-horizontal-width</span><span class="si">}</span><span class="p">;</span>
+  </span></span><span class="line"><span class="cl"><span class="na">--#{$prefix}offcanvas-height</span><span class="o">:</span> <span class="si">#{</span><span class="nv">$offcanvas-vertical-height</span><span class="si">}</span><span class="p">;</span>
+  </span></span><span class="line"><span class="cl"><span class="na">--#{$prefix}offcanvas-padding-x</span><span class="o">:</span> <span class="si">#{</span><span class="nv">$offcanvas-padding-x</span><span class="si">}</span><span class="p">;</span>
+  </span></span><span class="line"><span class="cl"><span class="na">--#{$prefix}offcanvas-padding-y</span><span class="o">:</span> <span class="si">#{</span><span class="nv">$offcanvas-padding-y</span><span class="si">}</span><span class="p">;</span>
+  </span></span><span class="line"><span class="cl"><span class="na">--#{$prefix}offcanvas-color</span><span class="o">:</span> <span class="si">#{</span><span class="nv">$offcanvas-color</span><span class="si">}</span><span class="p">;</span>
+  </span></span><span class="line"><span class="cl"><span class="na">--#{$prefix}offcanvas-bg</span><span class="o">:</span> <span class="si">#{</span><span class="nv">$offcanvas-bg-color</span><span class="si">}</span><span class="p">;</span>
+  </span></span><span class="line"><span class="cl"><span class="na">--#{$prefix}offcanvas-border-width</span><span class="o">:</span> <span class="si">#{</span><span class="nv">$offcanvas-border-width</span><span class="si">}</span><span class="p">;</span>
+  </span></span><span class="line"><span class="cl"><span class="na">--#{$prefix}offcanvas-border-color</span><span class="o">:</span> <span class="si">#{</span><span class="nv">$offcanvas-border-color</span><span class="si">}</span><span class="p">;</span>
+  </span></span><span class="line"><span class="cl"><span class="na">--#{$prefix}offcanvas-box-shadow</span><span class="o">:</span> <span class="si">#{</span><span class="nv">$offcanvas-box-shadow</span><span class="si">}</span><span class="p">;</span>
+  </span></span><span class="line"><span class="cl"><span class="na">--#{$prefix}offcanvas-transition</span><span class="o">:</span> <span class="si">#{</span><span class="ni">transform</span> <span class="nv">$offcanvas-transition-duration</span> <span class="ni">ease-in-out</span><span class="si">}</span><span class="p">;</span>
+  </span></span><span class="line"><span class="cl"><span class="na">--#{$prefix}offcanvas-title-line-height</span><span class="o">:</span> <span class="si">#{</span><span class="nv">$offcanvas-title-line-height</span><span class="si">}</span><span class="p">;</span></span></span></code></pre></div></div>
+  <h3 id="sass-variables">Sass variables <a class="anchor-link" href="#sass-variables" aria-label="Link to this section: Sass variables"></a></h3>
+  <div class="bd-example-snippet bd-code-snippet bd-file-ref">
+      <div class="d-flex align-items-center highlight-toolbar ps-3 pe-2 py-1 border-bottom">
+        <a class="font-monospace link-secondary link-underline-secondary link-underline-opacity-0 link-underline-opacity-100-hover small" href="https://github.com/twbs/bootstrap/blob/v5.3.3/scss/_variables.scss">scss/_variables.scss</a>
+        <div class="d-flex ms-auto">
+          <button type="button" class="btn-clipboard mt-0 me-0" aria-label="Copy to clipboard" data-bs-original-title="Copy to clipboard">
+            <svg class="bi" aria-hidden="true"><use xlink:href="#clipboard"></use></svg>
+          </button>
+        </div>
+      </div><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-scss" data-lang="scss"><span class="line"><span class="cl"><span class="nv">$offcanvas-padding-y</span><span class="o">:</span>               <span class="nv">$modal-inner-padding</span><span class="p">;</span>
+  </span></span><span class="line"><span class="cl"><span class="nv">$offcanvas-padding-x</span><span class="o">:</span>               <span class="nv">$modal-inner-padding</span><span class="p">;</span>
+  </span></span><span class="line"><span class="cl"><span class="nv">$offcanvas-horizontal-width</span><span class="o">:</span>        <span class="mi">400</span><span class="kt">px</span><span class="p">;</span>
+  </span></span><span class="line"><span class="cl"><span class="nv">$offcanvas-vertical-height</span><span class="o">:</span>         <span class="mi">30</span><span class="kt">vh</span><span class="p">;</span>
+  </span></span><span class="line"><span class="cl"><span class="nv">$offcanvas-transition-duration</span><span class="o">:</span>     <span class="mf">.3</span><span class="kt">s</span><span class="p">;</span>
+  </span></span><span class="line"><span class="cl"><span class="nv">$offcanvas-border-color</span><span class="o">:</span>            <span class="nv">$modal-content-border-color</span><span class="p">;</span>
+  </span></span><span class="line"><span class="cl"><span class="nv">$offcanvas-border-width</span><span class="o">:</span>            <span class="nv">$modal-content-border-width</span><span class="p">;</span>
+  </span></span><span class="line"><span class="cl"><span class="nv">$offcanvas-title-line-height</span><span class="o">:</span>       <span class="nv">$modal-title-line-height</span><span class="p">;</span>
+  </span></span><span class="line"><span class="cl"><span class="nv">$offcanvas-bg-color</span><span class="o">:</span>                <span class="nf">var</span><span class="p">(</span><span class="o">--</span><span class="si">#{</span><span class="nv">$prefix</span><span class="si">}</span><span class="n">body-bg</span><span class="p">);</span>
+  </span></span><span class="line"><span class="cl"><span class="nv">$offcanvas-color</span><span class="o">:</span>                   <span class="nf">var</span><span class="p">(</span><span class="o">--</span><span class="si">#{</span><span class="nv">$prefix</span><span class="si">}</span><span class="n">body-color</span><span class="p">);</span>
+  </span></span><span class="line"><span class="cl"><span class="nv">$offcanvas-box-shadow</span><span class="o">:</span>              <span class="nv">$modal-content-box-shadow-xs</span><span class="p">;</span>
+  </span></span><span class="line"><span class="cl"><span class="nv">$offcanvas-backdrop-bg</span><span class="o">:</span>             <span class="nv">$modal-backdrop-bg</span><span class="p">;</span>
+  </span></span><span class="line"><span class="cl"><span class="nv">$offcanvas-backdrop-opacity</span><span class="o">:</span>        <span class="nv">$modal-backdrop-opacity</span><span class="p">;</span>
+  </span></span></code></pre></div></div>
+  <h2 id="usage">Usage <a class="anchor-link" href="#usage" aria-label="Link to this section: Usage"></a></h2>
+  <p>The offcanvas plugin utilizes a few classes and attributes to handle the heavy lifting:</p>
+  <ul>
+  <li><code>.offcanvas</code> hides the content</li>
+  <li><code>.offcanvas.show</code> shows the content</li>
+  <li><code>.offcanvas-start</code> hides the offcanvas on the left</li>
+  <li><code>.offcanvas-end</code> hides the offcanvas on the right</li>
+  <li><code>.offcanvas-top</code> hides the offcanvas on the top</li>
+  <li><code>.offcanvas-bottom</code> hides the offcanvas on the bottom</li>
+  </ul>
+  <p>Add a dismiss button with the <code>data-bs-dismiss="offcanvas"</code> attribute, which triggers the JavaScript functionality. Be sure to use the <code>&lt;button&gt;</code> element with it for proper behavior across all devices.</p>
+  <h3 id="via-data-attributes">Via data attributes <a class="anchor-link" href="#via-data-attributes" aria-label="Link to this section: Via data attributes"></a></h3>
+  <h4 id="toggle">Toggle <a class="anchor-link" href="#toggle" aria-label="Link to this section: Toggle"></a></h4>
+  <p>Add <code>data-bs-toggle="offcanvas"</code> and a <code>data-bs-target</code> or <code>href</code> to the element to automatically assign control of one offcanvas element. The <code>data-bs-target</code> attribute accepts a CSS selector to apply the offcanvas to. Be sure to add the class <code>offcanvas</code> to the offcanvas element. If you’d like it to default open, add the additional class <code>show</code>.</p>
+  <h4 id="dismiss">Dismiss <a class="anchor-link" href="#dismiss" aria-label="Link to this section: Dismiss"></a></h4>
+  <p>Dismissal can be achieved with the <code>data-bs-dismiss</code> attribute on a button <strong>within the offcanvas</strong> as demonstrated below:</p>
+  <div class="bd-code-snippet">  <div class="bd-clipboard">    <button type="button" class="btn-clipboard">      <svg class="bi" role="img" aria-label="Copy"><use xlink:href="#clipboard"></use></svg>    </button>  </div><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-html" data-lang="html"><span class="line"><span class="cl"><span class="p">&lt;</span><span class="nt">button</span> <span class="na">type</span><span class="o">=</span><span class="s">"button"</span> <span class="na">class</span><span class="o">=</span><span class="s">"btn-close"</span> <span class="na">data-bs-dismiss</span><span class="o">=</span><span class="s">"offcanvas"</span> <span class="na">aria-label</span><span class="o">=</span><span class="s">"Close"</span><span class="p">&gt;&lt;/</span><span class="nt">button</span><span class="p">&gt;</span>
+  </span></span></code></pre></div></div><p>or on a button <strong>outside the offcanvas</strong> using the additional <code>data-bs-target</code> as demonstrated below:</p>
+  <div class="bd-code-snippet">  <div class="bd-clipboard">    <button type="button" class="btn-clipboard">      <svg class="bi" role="img" aria-label="Copy"><use xlink:href="#clipboard"></use></svg>    </button>  </div><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-html" data-lang="html"><span class="line"><span class="cl"><span class="p">&lt;</span><span class="nt">button</span> <span class="na">type</span><span class="o">=</span><span class="s">"button"</span> <span class="na">class</span><span class="o">=</span><span class="s">"btn-close"</span> <span class="na">data-bs-dismiss</span><span class="o">=</span><span class="s">"offcanvas"</span> <span class="na">data-bs-target</span><span class="o">=</span><span class="s">"#my-offcanvas"</span> <span class="na">aria-label</span><span class="o">=</span><span class="s">"Close"</span><span class="p">&gt;&lt;/</span><span class="nt">button</span><span class="p">&gt;</span>
+  </span></span></code></pre></div></div><div class="bd-callout bd-callout-warning">
+  While both ways to dismiss an offcanvas are supported, keep in mind that dismissing from outside an offcanvas does not match the <a href="https://www.w3.org/WAI/ARIA/apg/patterns/dialogmodal/">ARIA Authoring Practices Guide dialog (modal) pattern</a>. Do this at your own risk.
+  </div>
+  
+  <h3 id="via-javascript">Via JavaScript <a class="anchor-link" href="#via-javascript" aria-label="Link to this section: Via JavaScript"></a></h3>
+  <p>Enable manually with:</p>
+  <div class="bd-code-snippet">  <div class="bd-clipboard">    <button type="button" class="btn-clipboard">      <svg class="bi" role="img" aria-label="Copy"><use xlink:href="#clipboard"></use></svg>    </button>  </div><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-js" data-lang="js"><span class="line"><span class="cl"><span class="kr">const</span> <span class="nx">offcanvasElementList</span> <span class="o">=</span> <span class="nb">document</span><span class="p">.</span><span class="nx">querySelectorAll</span><span class="p">(</span><span class="s1">'.offcanvas'</span><span class="p">)</span>
+  </span></span><span class="line"><span class="cl"><span class="kr">const</span> <span class="nx">offcanvasList</span> <span class="o">=</span> <span class="p">[...</span><span class="nx">offcanvasElementList</span><span class="p">].</span><span class="nx">map</span><span class="p">(</span><span class="nx">offcanvasEl</span> <span class="p">=&gt;</span> <span class="k">new</span> <span class="nx">bootstrap</span><span class="p">.</span><span class="nx">Offcanvas</span><span class="p">(</span><span class="nx">offcanvasEl</span><span class="p">))</span>
+  </span></span></code></pre></div></div><h3 id="options">Options <a class="anchor-link" href="#options" aria-label="Link to this section: Options"></a></h3>
+  <p>As options can be passed via data attributes or JavaScript, you can append an option name to <code>data-bs-</code>, as in <code>data-bs-animation="{value}"</code>. Make sure to change the case type of the option name from “<em>camelCase</em>” to “<em>kebab-case</em>” when passing the options via data attributes. For example, use <code>data-bs-custom-class="beautifier"</code> instead of <code>data-bs-customClass="beautifier"</code>.</p>
+  <p>As of Bootstrap 5.2.0, all components support an <strong>experimental</strong> reserved data attribute <code>data-bs-config</code> that can house simple component configuration as a JSON string. When an element has <code>data-bs-config='{"delay":0, "title":123}'</code> and <code>data-bs-title="456"</code> attributes, the final <code>title</code> value will be <code>456</code> and the separate data attributes will override values given on <code>data-bs-config</code>. In addition, existing data attributes are able to house JSON values like <code>data-bs-delay='{"show":0,"hide":150}'</code>.</p>
+  <p>The final configuration object is the merged result of <code>data-bs-config</code>, <code>data-bs-</code>, and <code>js object</code> where the latest given key-value overrides the others.</p>
+  
+  <div class="table-responsive"><table class="table">
+  <thead>
+  <tr>
+  <th>Name</th>
+  <th>Type</th>
+  <th>Default</th>
+  <th>Description</th>
+  </tr>
+  </thead>
+  <tbody>
+  <tr>
+  <td><code>backdrop</code></td>
+  <td>boolean or the string <code>static</code></td>
+  <td><code>true</code></td>
+  <td>Apply a backdrop on body while offcanvas is open. Alternatively, specify <code>static</code> for a backdrop which doesn’t close the offcanvas when clicked.</td>
+  </tr>
+  <tr>
+  <td><code>keyboard</code></td>
+  <td>boolean</td>
+  <td><code>true</code></td>
+  <td>Closes the offcanvas when escape key is pressed.</td>
+  </tr>
+  <tr>
+  <td><code>scroll</code></td>
+  <td>boolean</td>
+  <td><code>false</code></td>
+  <td>Allow body scrolling while offcanvas is open.</td>
+  </tr>
+  </tbody>
+  </table></div>
+  
+  <h3 id="methods">Methods <a class="anchor-link" href="#methods" aria-label="Link to this section: Methods"></a></h3>
+  <div class="bd-callout bd-callout-danger">
+  <strong>All API methods are asynchronous and start a transition.</strong> They return to the caller as soon as the transition is started, but before it ends. In addition, a method call on a transitioning component will be ignored. <a href="/docs/5.3/getting-started/javascript/#asynchronous-functions-and-transitions">Learn more in our JavaScript docs.</a>
+  </div>
+  
+  <p>Activates your content as an offcanvas element. Accepts an optional options <code>object</code>.</p>
+  <p>You can create an offcanvas instance with the constructor, for example:</p>
+  <div class="bd-code-snippet">  <div class="bd-clipboard">    <button type="button" class="btn-clipboard">      <svg class="bi" role="img" aria-label="Copy"><use xlink:href="#clipboard"></use></svg>    </button>  </div><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-js" data-lang="js"><span class="line"><span class="cl"><span class="kr">const</span> <span class="nx">bsOffcanvas</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">bootstrap</span><span class="p">.</span><span class="nx">Offcanvas</span><span class="p">(</span><span class="s1">'#myOffcanvas'</span><span class="p">)</span>
+  </span></span></code></pre></div></div><div class="table-responsive"><table class="table">
+  <thead>
+  <tr>
+  <th>Method</th>
+  <th>Description</th>
+  </tr>
+  </thead>
+  <tbody>
+  <tr>
+  <td><code>dispose</code></td>
+  <td>Destroys an element’s offcanvas.</td>
+  </tr>
+  <tr>
+  <td><code>getInstance</code></td>
+  <td><em>Static</em> method which allows you to get the offcanvas instance associated with a DOM element.</td>
+  </tr>
+  <tr>
+  <td><code>getOrCreateInstance</code></td>
+  <td><em>Static</em> method which allows you to get the offcanvas instance associated with a DOM element, or create a new one in case it wasn’t initialized.</td>
+  </tr>
+  <tr>
+  <td><code>hide</code></td>
+  <td>Hides an offcanvas element. <strong>Returns to the caller before the offcanvas element has actually been hidden</strong> (i.e. before the <code>hidden.bs.offcanvas</code> event occurs).</td>
+  </tr>
+  <tr>
+  <td><code>show</code></td>
+  <td>Shows an offcanvas element. <strong>Returns to the caller before the offcanvas element has actually been shown</strong> (i.e. before the <code>shown.bs.offcanvas</code> event occurs).</td>
+  </tr>
+  <tr>
+  <td><code>toggle</code></td>
+  <td>Toggles an offcanvas element to shown or hidden. <strong>Returns to the caller before the offcanvas element has actually been shown or hidden</strong> (i.e. before the <code>shown.bs.offcanvas</code> or <code>hidden.bs.offcanvas</code> event occurs).</td>
+  </tr>
+  </tbody>
+  </table></div>
+  
+  <h3 id="events">Events <a class="anchor-link" href="#events" aria-label="Link to this section: Events"></a></h3>
+  <p>Bootstrap’s offcanvas class exposes a few events for hooking into offcanvas functionality.</p>
+  <div class="table-responsive"><table class="table">
+  <thead>
+  <tr>
+  <th>Event type</th>
+  <th>Description</th>
+  </tr>
+  </thead>
+  <tbody>
+  <tr>
+  <td><code>hide.bs.offcanvas</code></td>
+  <td>This event is fired immediately when the <code>hide</code> method has been called.</td>
+  </tr>
+  <tr>
+  <td><code>hidden.bs.offcanvas</code></td>
+  <td>This event is fired when an offcanvas element has been hidden from the user (will wait for CSS transitions to complete).</td>
+  </tr>
+  <tr>
+  <td><code>hidePrevented.bs.offcanvas</code></td>
+  <td>This event is fired when the offcanvas is shown, its backdrop is <code>static</code> and a click outside of the offcanvas is performed. The event is also fired when the escape key is pressed and the <code>keyboard</code> option is set to <code>false</code>.</td>
+  </tr>
+  <tr>
+  <td><code>show.bs.offcanvas</code></td>
+  <td>This event fires immediately when the <code>show</code> instance method is called.</td>
+  </tr>
+  <tr>
+  <td><code>shown.bs.offcanvas</code></td>
+  <td>This event is fired when an offcanvas element has been made visible to the user (will wait for CSS transitions to complete).</td>
+  </tr>
+  </tbody>
+  </table></div>
+  
+  <div class="bd-code-snippet">  <div class="bd-clipboard">    <button type="button" class="btn-clipboard">      <svg class="bi" role="img" aria-label="Copy"><use xlink:href="#clipboard"></use></svg>    </button>  </div><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-js" data-lang="js"><span class="line"><span class="cl"><span class="kr">const</span> <span class="nx">myOffcanvas</span> <span class="o">=</span> <span class="nb">document</span><span class="p">.</span><span class="nx">getElementById</span><span class="p">(</span><span class="s1">'myOffcanvas'</span><span class="p">)</span>
+  </span></span><span class="line"><span class="cl"><span class="nx">myOffcanvas</span><span class="p">.</span><span class="nx">addEventListener</span><span class="p">(</span><span class="s1">'hidden.bs.offcanvas'</span><span class="p">,</span> <span class="nx">event</span> <span class="p">=&gt;</span> <span class="p">{</span>
+  </span></span><span class="line"><span class="cl">  <span class="c1">// do something...
+  </span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="p">})</span>
+  </span></span></code></pre></div></div>
+        </div>
+      </main>
+</body>
+</html>

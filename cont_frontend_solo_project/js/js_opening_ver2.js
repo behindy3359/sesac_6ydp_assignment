@@ -36,8 +36,8 @@ animateButton.addEventListener('click', function() {
     wbps.play();
   }, 4000);
   
-  // 10초 후 다른 페이지로 이동
-  setTimeout(function() {
-    window.location.href = "./mainPage.html";
-  }, 10000);
+  // // 10초 후 다른 페이지로 이동
+  // setTimeout(function() {
+  //   window.location.href = "./mainPage.html";
+  // }, 10000);
 });

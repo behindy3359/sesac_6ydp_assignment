@@ -78,6 +78,7 @@
     left: 13%;
     top: 20%;
     background-image: url(../source/op-dot-glass.png);
+    overflow: visible;
     z-index: 4;
 }
 #stand-mic{    
