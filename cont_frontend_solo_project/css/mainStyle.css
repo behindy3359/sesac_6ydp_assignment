@@ -6,7 +6,7 @@ aside.fixed {
     top: calc(30vh);
     width: 20vw;
     height: calc(100% - (70px + 56px));
-    right: calc(( 20vw - 15px )* -1 );
+    right: calc(( 20vw - 20px )* -1 );
     overflow-y: auto;
     z-index: 1030;
     opacity: 0.4;
@@ -22,4 +22,7 @@ aside.fixed {
     transform: translateX(-15vw);
     opacity: 1;
     transition: 0.5s;
+}
+#menuPlate{
+    overflow: hidden;
 }

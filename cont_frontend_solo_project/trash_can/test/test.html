@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <style>
+    .container {
+      position: relative;
+      width: 200px;
+      height: 200px;
+    }
+
+    .donut, .donut-overlay {
+      width: 100%;
+      height: 100%;
+      border-radius: 50%;
+      position: absolute;
+      top: 0;
+      left: 0;
+    }
+
+    .donut {
+      background: conic-gradient(
+        from 0deg,
+          none,
+          none 25%,
+          none 25%,
+          none 50%,
+          none 50%,
+          none 75%,
+          none 75%,
+          none
+      );
+      clip-path: circle(50% at 50% 50%);
+      animation: reveal 4s linear 1 forwards;
+    }
+
+    .donut::before, .donut-overlay::before {
+      content: '';
+      position: absolute;
+      top: 25%;
+      left: 25%;
+      width: 50%;
+      height: 50%;
+      background: white;
+      border-radius: 50%;
+      z-index: 1;
+    }
+
+    .donut-overlay {
+      background: none;
+      clip-path: circle(50% at 50% 50%);
+      z-index: 2;
+    }    
+    .donut-overlay {
+      width: 200px;
+      height: 200px;
+        border-radius: 50%;
+        background: conic-gradient(
+          from 0deg,
+          black,
+          black 10%,
+          transparent 10%,
+          transparent
+        );
+        clip-path: circle(50% at 50% 50%);
+        position: relative;
+        animation: rotate-overlay 4s linear 1;
+      }
+  
+      .donut-overlay::before {
+        content: '';
+        position: absolute;
+        top: 25%;
+        left: 25%;
+        width: 50%;
+        height: 50%;
+        background: white;
+        border-radius: 50%;
+        z-index: 1;
+      }
+  
+      @keyframes rotate-overlay {
+        from {
+          transform: rotate(0deg);
+        }
+        to {
+          transform: rotate(360deg);
+        }
+      }
+
+    @keyframes reveal {
+      0% {
+        background: conic-gradient(
+          from 0deg,
+          black,
+          black 10%,
+          white 10%,
+          white
+        );
+      }
+      10% {
+        background: conic-gradient(
+          from 0deg,
+          black,
+          black 15%,
+          white 15%,
+          white
+        );
+      }
+      20% {
+        background: conic-gradient(
+          from 0deg,
+          black,
+          black 25%,
+          white 25%,
+          white
+        );
+      }
+      30% {
+        background: conic-gradient(
+          from 0deg,
+          black,
+          black 35%,
+          white 35%,
+          white
+        );
+      }
+      40% {
+        background: conic-gradient(
+          from 0deg,
+          black,
+          black 45%,
+          white 45%,
+          white
+        );
+      }
+      50% {
+        background: conic-gradient(
+          from 0deg,
+          black,
+          black 55%,
+          white 55%,
+          white
+        );
+      }
+      60% {
+        background: conic-gradient(
+          from 0deg,
+          black,
+          black 65%,
+          white 65%,
+          white
+        );
+      }
+      70% {
+        background: conic-gradient(
+          from 0deg,
+          black,
+          black 75%,
+          white 75%,
+          white
+        );
+      }
+      80% {
+        background: conic-gradient(
+          from 0deg,
+          black,
+          black 85%,
+          white 85%,
+          white
+        );
+      }
+      90% {
+        background: conic-gradient(
+          from 0deg,
+          black,
+          black 95%,
+          white 95%,
+          white
+        );
+      }
+      100% {
+        background: conic-gradient(
+          from 0deg,
+          black,
+          black 100%
+        );
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <div class="donut"></div>
+    <div class="donut-overlay"></div>
+  </div>
+</body>
+</html>

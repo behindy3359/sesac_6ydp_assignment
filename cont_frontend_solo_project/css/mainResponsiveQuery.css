@@ -1,3 +1,10 @@
+@media screen and ( max-width : 1400px){
+    .content3container{
+        display: none;
+    }
+    
+}
+
 @media screen and ( max-width : 992px) and ( min-width : 770px ) {
     aside.fixed {
         position: fixed;
@@ -18,5 +25,50 @@
 @media screen and ( max-width : 770px)  {
     aside.fixed {
         display: none;
+    }
+    #ceil-curtain{
+        display: none;
+    }
+}
+
+@media screen and ( max-width : 700px)  {
+    .toyContainer{  
+        width: 60vw;
+        height: 60vw;
+    }
+    #purin-the-singer{
+        width: 300px;
+        height: 300px;
+        right : 30vw;
+        bottom: 10%;
+        background-image: url(../source/op-purin.webp);
+        background-size: contain;
+        z-index: 3;
+    }
+    #dot-glasses{    
+        display: none;
+    }
+    #stand-mic{
+        display: none;
+    }
+    .purin-advent-activated{
+        animation: purin-advent-mediaQuery;
+        animation-duration: 2500ms;
+        animation-iteration-count: 1;
+        animation-fill-mode: forwards;
+    }
+    .content4 {
+        width: 100%;
+        height: 100%;
+        background: none;
+    }
+    #randomMenu{
+        position: absolute;
+        font-size: 20px;
+        font-weight: 700;
+        left: -10%;
+        display: flex;
+        flex-wrap: wrap;
+        margin: 10px;
     }
 }

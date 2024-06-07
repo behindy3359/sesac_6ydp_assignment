@@ -29,8 +29,12 @@
     }
 }
 @keyframes r-curtain-open {
-    100%{
+    99%{
         translate: 100%;
+        width: 100%;
+    }
+    100%{
+        width: 0%;
     }
 }
 
@@ -72,6 +76,32 @@
         transform: skew(0deg);
     }
 }
+@keyframes purin-advent-mediaQuery {
+    15%{
+        rotate: 30deg;
+    }
+    30%{
+        rotate: -30deg;
+    }
+    45%{
+        rotate: 30deg;
+    }
+    60%{
+        rotate: -30deg;
+    }
+    75%{
+        rotate: 0deg;
+        transform: skew(0);
+    }
+    90%{
+        transform: skew(15deg);
+        transform-origin: bottom;
+    }
+    100%{
+        transform: skew(0deg);
+    }
+}
+
 /* 선글라스 애니메이션 */
 @keyframes dot-glass-appear {
     0%{

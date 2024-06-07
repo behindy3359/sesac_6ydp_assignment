@@ -1,0 +1,216 @@
+#content1-item1 { width: 10%; height: 10%; top: 5%; left: 26%;}
+#content1-item2 { width: 40%; height: 10%; top: 10%; left: 10%; }
+#content1-item3 { width: 30%; height: 0; padding-bottom: 30%; background-color: transparent; top: 27%; left: 13%; }
+#content1-item4 { width: 10%; height: 50%; top: 20%; left: 60%; }
+#content1-item5 { width: 20%; height: 10%; top: 40%; left: 60%; }
+#content1-item6 { width: 10%; height: 20%; top: 70%; left: 20%; }
+#content1-item7 { width: 50%; height: 12%; top: 80%; left: 20%; }
+
+.animation-1-1{ animation: write-anim1 0.3s linear 0s forwards;}
+.animation-1-2{ animation: write-anim2 0.3s linear 0.3s forwards;}
+.animation-1-3-1{ animation: reveal 1s linear 0.6s forwards;}
+.animation-1-3-2{ animation: rotate-overlay 1s linear 0.6s;}
+.animation-1-4{ animation: write-anim4 0.3s linear 1.6s forwards;}
+.animation-1-5{ animation: write-anim5 0.3s linear 1.9s forwards;}
+.animation-1-6{ animation: write-anim6 0.3s linear 2.2s forwards;}
+.animation-1-7{ animation: write-anim7 0.3s linear 2.5s forwards;}
+
+#content2-item1 { width: 60% ; height: 10%; top: 5%; left: 20%; }
+#content2-item2 { width: 10% ; height: 20%; top: 6%; left: 70%; }
+#content2-item3 { width: 70% ; height: 10%; top: 30%; left: 15%; }
+#content2-item4 { width: 60% ; height: 10%; top: 45%; left: 20%; }
+#content2-item5 { width: 10% ; height: 20%; top: 50%; left: 70%; }
+#content2-item6 { width: 60% ; height: 10%; top: 65%; left: 20%; }
+#content2-item7 { width: 10% ; height: 20%; top: 70%; left: 20%; }
+#content2-item8 { width: 60% ; height: 10%; top: 85%; left: 20%; }
+
+.animation-2-1{ animation: write-anim8 0.3s linear 2.8s forwards;}
+.animation-2-2{ animation: write-anim9 0.3s linear 3.1s forwards;}
+.animation-2-3{ animation: write-anim10 0.3s linear 3.4s forwards;}
+.animation-2-4{ animation: write-anim8 0.3s linear 3.7s forwards;}
+.animation-2-5{ animation: write-anim9 0.3s linear 4.0s forwards;}
+.animation-2-6{ animation: write-anim8 0.3s linear 4.3s forwards;}
+.animation-2-7{ animation: write-anim9 0.3s linear 4.6s forwards;}
+.animation-2-8{ animation: write-anim8 0.3s linear 4.9s forwards;}
+
+@keyframes rotate-overlay {
+    from {visibility: visible; 
+        transform: rotate(0deg);
+    }
+    to {visibility: visible; 
+        transform: rotate(360deg);
+    }
+}
+
+@keyframes reveal {
+    0% {visibility: visible; 
+        background: conic-gradient(
+            from 0deg,
+            black,
+            black 10%,
+            transparent 10%,
+            transparent
+        );
+    }
+    10% {visibility: visible; 
+        background: conic-gradient(
+            from 0deg,
+            black,
+            black 15%,
+            transparent 15%,
+            transparent
+        );
+    }
+    20% {visibility: visible; 
+        background: conic-gradient(
+            from 0deg,
+            black,
+            black 25%,
+            transparent 25%,
+            transparent
+        );
+    }
+    30% {visibility: visible; 
+        background: conic-gradient(
+            from 0deg,
+            black,
+            black 35%,
+            transparent 35%,
+            transparent
+        );
+    }
+    40% {visibility: visible; 
+        background: conic-gradient(
+            from 0deg,
+            black,
+            black 45%,
+            transparent 45%,
+            transparent
+        );
+    }
+    50% {visibility: visible; 
+        background: conic-gradient(
+            from 0deg,
+            black,
+            black 55%,
+            transparent 55%,
+            transparent
+        );
+    }
+    60% {visibility: visible; 
+        background: conic-gradient(
+            from 0deg,
+            black,
+            black 65%,
+            transparent 65%,
+            transparent
+        );
+    }
+    70% {visibility: visible; 
+        background: conic-gradient(
+            from 0deg,
+            black,
+            black 75%,
+            transparent 75%,
+            transparent
+        );
+    }
+    80% {visibility: visible; 
+        background: conic-gradient(
+            from 0deg,
+            black,
+            black 85%,
+            transparent 85%,
+            transparent
+        );
+    }
+    90% {visibility: visible; 
+        background: conic-gradient(
+            from 0deg,
+            black,
+            black 95%,
+            transparent 95%,
+            transparent
+        );
+    }
+    100% {visibility: visible; 
+        background: conic-gradient(
+            from 0deg,
+            black,
+            black 100%
+        );
+    }
+}
+
+@keyframes write-anim1 {
+    0%{visibility: visible; 
+        height: 0;
+    }
+    100%{
+        height: 10%;
+        visibility: visible; 
+    } 
+}
+@keyframes write-anim2 {
+    0%{visibility: visible; 
+        width: 0;
+    }
+    100%{visibility: visible; 
+        width: 40%;
+    } 
+}
+@keyframes write-anim4 {
+    0%{visibility: visible; 
+        height: 0;
+    }
+    100%{visibility: visible; 
+        height: 50%;
+    } 
+}
+@keyframes write-anim5 {
+    0%{visibility: visible; 
+        width: 0;
+    }
+    100%{visibility: visible; 
+        width: 20%;
+    } 
+}@keyframes write-anim6 {
+    0%{visibility: visible; 
+        height: 0;
+    }
+    100%{visibility: visible; 
+        height: 20%;
+    } 
+}
+@keyframes write-anim7 {
+    0%{visibility: visible; 
+        width: 0;
+    }
+    100%{visibility: visible; 
+        width: 50%;
+    } 
+}
+@keyframes write-anim8 {
+    0%{visibility: visible; 
+        width: 0;
+    }
+    100%{visibility: visible; 
+        width: 60%;
+    } 
+}
+@keyframes write-anim9 {
+    0%{visibility: visible; 
+        height: 0;
+    }
+    100%{visibility: visible; 
+        height: 20%;
+    } 
+}
+@keyframes write-anim10 {
+    0%{visibility: visible; 
+        width: 0;
+    }
+    100%{visibility: visible; 
+        width: 70%;
+    } 
+}
