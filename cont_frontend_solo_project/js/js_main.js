@@ -38,6 +38,19 @@ function startAnimation() {
 function rollMenu() {
     let menuPrefix = document.querySelector('#randomMenu-prefix');
     let menuSuffix = document.querySelector('#randomMenu-suffix');
-    menuPrefix.textContent = prefix[Math.floor(Math.random()*50 + 1)];
-    menuSuffix.textContent = suffix[Math.floor(Math.random()*50 + 1)];
+    menuPrefix.textContent = prefix[Math.floor(Math.random()*50)];
+    menuSuffix.textContent = suffix[Math.floor(Math.random()*50)];
+}
+
+
+function textChange() {
+    let buttonText = document.querySelector('#writeButton2');
+    buttonText.innerHTML = '나 말고 오리를 눌러보세요!';
+}
+
+function changePage(){
+    window.location.href = "./duckroom.html";
+}
+function redirectToIndex() {
+    window.location.href = "./index.html";
 }

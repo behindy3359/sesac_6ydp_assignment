@@ -11,7 +11,7 @@ animateButton.addEventListener('click', function() {
   // 박수소리, mp3파일의 음량 제어
   clapClap.play();
   setTimeout(function() {
-    var fadeOutInterval = setInterval(function() {
+    let fadeOutInterval = setInterval(function() {
       if (clapClap.volume > 0) {
         clapClap.volume -= 0.1; 
       } else {
@@ -35,9 +35,9 @@ animateButton.addEventListener('click', function() {
     animateSinger.classList.toggle('world-best-singer-activated');
     wbps.play();
   }, 4000);
-  
-  // 10초 후 다른 페이지로 이동
+
   setTimeout(function() {
-    window.location.href = "./mainPage.html";
-  }, 10000);
+    window.location.href = "./mainpage.html";
+  }, 8000);
+  
 });

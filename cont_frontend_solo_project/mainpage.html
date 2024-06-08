@@ -16,7 +16,7 @@
   <link rel="stylesheet" href="./css/mainStyle.css">
   <link rel="stylesheet" href="./css/main_toy.css">
   <link rel="stylesheet" href="./css/main_toy_animation.css">
-  <link rel="stylesheet" href="./css/mainResponsiveQuery.css">  
+  <link rel="stylesheet" href="./css/mainResponsiveQuery.css"> 
 </head>
 <body>
   <!-- header -->
@@ -176,7 +176,7 @@
 
       <hr class="my-4" />
 
-      <article class="container mt-5" id='section5'>
+      <article class="container mt-5" id='section6'>
         <h2 class="mb-4">장난감 2</h2>
         <button class="btn btn-success float-end" onclick="rollMenu()" id="writeButton">장난감 작동!</button>
         <div class="row justify-content-center">
@@ -200,14 +200,13 @@
       
       <hr class="my-4" />
 
-      <article class="container mt-5" id='section5'>
+      <article class="container mt-5" id='section7'>
         <h2 class="mb-4"> 장난감 3</h2>
-        <button class="btn btn-success float-end" onclick="rollMenu()" id="writeButton">장난감 작동!</button>
+        <button class="btn btn-success float-end" onclick="textChange()" id="writeButton2">장난감 작동!</button>
         <div class="row justify-content-center">
-          <div class="col-md-6 toyContainer">            
-            <div class="content5">
-                
-            </div>
+          <div class="col-md-6 toyContainer content5">            
+            <div class="behind-light"></div>
+            <div class="duck" onclick="changePage()"></div>
           </div>
         </div>
       </article>
@@ -219,16 +218,21 @@
     <div class="flex-shrink-0 bg-success p-3 rounded-start">
       <ul class="list-unstyled ps-0">
         <li class="mb-1">
+          <button onclick="redirectToIndex()" class="btn text-light btn-toggle d-inline-flex align-items-center rounded border-0 collapsed" data-bs-toggle="collapse">
+            <b> 푸린씨의 무대</b>
+          </button>
           <button class="btn text-light btn-toggle d-inline-flex align-items-center rounded border-0 collapsed" data-bs-toggle="collapse" data-bs-target="#home-collapse" aria-expanded="true">
             <b>뭐라도 좀 먹을까?</b>
           </button>
           <div class="collapse" id="home-collapse">
             <ul class="btn-toggle-nav list-unstyled fw-normal pb-1 small">
-              <li><a href="#section1" class="link-body-emphasis d-inline-flex text-decoration-none rounded text-light"> 맛있겠지? </a></li>
-              <li><a href="#section2" class="link-body-emphasis d-inline-flex text-decoration-none rounded text-light"> 면 </a></li>
-              <li><a href="#section3" class="link-body-emphasis d-inline-flex text-decoration-none rounded text-light"> 고기  </a></li>
-              <li><a href="#section4" class="link-body-emphasis d-inline-flex text-decoration-none rounded text-light"> 후기 </a></li>
-              <li><a href="#section5" class="link-body-emphasis d-inline-flex text-decoration-none rounded text-light"> 장난감1 </a></li>
+              <li><a href="./mainpage.html#section1" class="link-body-emphasis d-inline-flex text-decoration-none rounded text-light"> 맛있겠지? </a></li>
+              <li><a href="./mainpage.html#section2" class="link-body-emphasis d-inline-flex text-decoration-none rounded text-light"> 면 </a></li>
+              <li><a href="./mainpage.html#section3" class="link-body-emphasis d-inline-flex text-decoration-none rounded text-light"> 고기  </a></li>
+              <li><a href="./mainpage.html#section4" class="link-body-emphasis d-inline-flex text-decoration-none rounded text-light"> 후기 </a></li>
+              <li><a href="./mainpage.html#section5" class="link-body-emphasis d-inline-flex text-decoration-none rounded text-light"> 장난감1 </a></li>
+              <li><a href="./mainpage.html#section6" class="link-body-emphasis d-inline-flex text-decoration-none rounded text-light"> 장난감2 </a></li>
+              <li><a href="./mainpage.html#section7" class="link-body-emphasis d-inline-flex text-decoration-none rounded text-light"> 장난감3 </a></li>
             </ul>
           </div>
         </li>
@@ -245,9 +249,12 @@
             </ul>
           </div>
         </li>
+        <button onclick="changePage()" class="btn text-light btn-toggle d-inline-flex align-items-center rounded border-0 collapsed">
+          <b> 오리네 집으로</b>
+        </button>
       </ul>
     </div>
-  </aside>  
+  </aside> 
   <!-- footer -->
   <footer class="bg-success text-white mt-5 py-3">
     <div class="container text-center">
@@ -257,4 +264,5 @@
 </body>
 <script defer src="./js/js_main_menus.js"></script>
 <script src="./js/js_main.js"></script>
+<script src="./js/js_duckroom.js"></script>
 </html>
