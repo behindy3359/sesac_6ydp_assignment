@@ -91,10 +91,11 @@
     position: absolute;
     font-size: 20px;
     font-weight: 700;
-    top: 40%;
+    top: 25%;
     left: 10%;
     display: flex;
     flex-wrap: wrap;
+    justify-content: flex-end;
     margin: 10px;
 }
 .content5{
