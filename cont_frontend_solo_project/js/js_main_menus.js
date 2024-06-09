@@ -2,16 +2,34 @@ const menuItems = '피자, 버거, 스시, 타코, 파스타, 샐러드, 프라�
 const sliceTheMenu = menuItems.split(', ');
 const menuPlate = document.querySelector('#menuPlate');
 
-let index = 0;
+const observe1 = (entries, observer) => {
+    entries.forEach(entry => {
+        if (entry.isIntersecting) {
+            let index = 0;
 
-const intervalId = setInterval(() => {
-    if ( index < sliceTheMenu.length ) {
-        menuPlate.innerHTML += sliceTheMenu[ index ] + ' ';
-        index++;
-    } else {
-        clearInterval( intervalId );
-    }
-}, 50);
+            const intervalId = setInterval(() => {
+                if (index < sliceTheMenu.length) {
+                    menuPlate.innerHTML += sliceTheMenu[index] + ' ';
+                    index++;
+                } else {
+                    clearInterval(intervalId);
+                }
+            }, 50);
+
+            // 요소의 관찰을 해제하여 한 번만 실행되도록 설정
+            observer.unobserve(entry.target);
+        }
+    });
+};
+
+const observer = new IntersectionObserver(observe1, {
+    root: null,
+    rootMargin: '0px',
+    threshold: 1.0
+});
+
+
+observer.observe(menuPlate);
 
 const prefix=['차가운',
 '식은',

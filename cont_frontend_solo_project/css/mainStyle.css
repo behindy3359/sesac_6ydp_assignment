@@ -26,3 +26,20 @@ aside.fixed {
 #menuPlate{
     overflow: hidden;
 }
+.cb {
+    border: 2px solid gray;
+}
+.cb-title {
+    white-space: nowrap;
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+}
+.cb-hd-btn {
+    width: 12px;
+    height: 12px;
+}
+.cb-txtbox{
+    text-align: left;
+    padding-top: 0.5rem;
+}
