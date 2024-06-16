@@ -1,33 +1,40 @@
 <!DOCTYPE html>
 <html lang="ko">
-    <%- include('partials/head')%>
+  <%- include('partials/head')%>
 <body>
-    <header class="header">고민하는 무민</header>
-    <main class="main-container">
-      <section class="sticky">
-        <div class="sticky-title"> 목업 만들기</div>
-        <article class="article article-1">
-          <div class="title"> 제목 1</div>
-          <div class="content">
+  <%- include('partials/header-nav')%>
+  <%- include('partials/stack-window')%>
+  <main class="main-container">
+    <section class="sticky">
+      <div class="sticky-title"> 여기엔 뭘 넣지
+
+      </div>
+      <article class="article article-1">
+        <div class="title"> 넣을거 1</div>
+        <div class="content">
+          <div class="city wether">
+            <div class="citycontainer"></div>
           </div>
-        </article>
-        <article class="article article-2">
-          <div class="title"> 제목 2</div>
-          <div class="content">
-          </div>
-        </article>
-        <article class="article article-3">
-          <div class="title"> 제목 3</div>
-          <div class="content">
-          </div>
-        </article>
-        <article class="article article-4">
-          <div class="title"> 제목 4</div>
-          <div class="content">
-          </div>
-        </article>
-      </section>
-    </main>  
+        </div>
+      </article>
+      <article class="article article-2">
+        <div class="title"> 넣을거 2</div>
+        <div class="content">
+        </div>
+      </article>
+      <article class="article article-3">
+        <div class="title"> 헉...?</div>
+        <div class="content">
+        </div>
+      </article>
+      <article class="article article-4">
+        <div class="title"> 넣을거 4</div>
+        <div class="content">
+        </div>
+      </article>
+    </section>
+  </main>
+  <%- include('partials/footer')%>
 </body>
-    <%- include('partials/tail')%>
+  <%- include('partials/tail')%>
 </html>

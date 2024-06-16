@@ -1,0 +1,51 @@
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background-color: none;
+  color: #fff;
+  font-family: Arial, sans-serif;
+}
+
+#clock {
+  display: flex;
+  gap: 10px;
+}
+
+.digit-wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.digit {
+  position: relative;
+  width: 40px;
+  height: 80px;
+}
+
+.segment {
+  position: absolute;
+}
+
+.segment.on {
+  background-color: black;
+}
+
+.segment.a { top: 0; left: 10px; width: 20px; height: 10px; }
+.segment.b { top: 10px; right: 0; width: 10px; height: 30px; }
+.segment.c { bottom: 10px; right: 0; width: 10px; height: 30px; }
+.segment.d { bottom: 0; left: 10px; width: 20px; height: 10px; }
+.segment.e { bottom: 10px; left: 0; width: 10px; height: 30px; }
+.segment.f { top: 10px; left: 0; width: 10px; height: 30px; }
+.segment.g { top: 35px; left: 10px; width: 20px; height: 10px; }
+
+.separator {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 20px;
+  font-size: 60px;
+  color: black;
+}
