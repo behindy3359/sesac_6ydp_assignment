@@ -66,13 +66,13 @@ getWeatherData().then(res => {
   const Weather = res.data.weather[0].main;
   let weatherIcon ='';
   switch(Weather){
-    case 'Thunderstorm': weatherIcon='<i class="fa-solid fa-bolt"></i>'; ;break;
-    case 'Drizzle': weatherIcon= '<i class="fa-solid fa-cloud-rain"></i>'; ;break;
-    case 'Rain': weatherIcon= '<i class="fa-solid fa-cloud-showers-heavy"></i>';  ;break;
-    case 'Snow': weatherIcon= '<i class="fa-solid fa-snowflake"></i>'; ;break;
-    case 'Atmosphere': weatherIcon= '<i class="fa-solid fa-wind"></i>';  ;break;
-    case 'Clear': weatherIcon= '<i class="fa-solid fa-sun"></i>';  ;break;
-    case 'Clouds': weatherIcon= '<i class="fa-solid fa-cloud"></i>';  ;break;
+    case 'Thunderstorm': weatherIcon='<i class="fa-solid fa-bolt"></i>'; break;
+    case 'Drizzle': weatherIcon= '<i class="fa-solid fa-cloud-rain"></i>'; break;
+    case 'Rain': weatherIcon= '<i class="fa-solid fa-cloud-showers-heavy"></i>'; break;
+    case 'Snow': weatherIcon= '<i class="fa-solid fa-snowflake"></i>'; break;
+    case 'Atmosphere': weatherIcon= '<i class="fa-solid fa-wind"></i>'; break;
+    case 'Clear': weatherIcon= '<i class="fa-solid fa-sun"></i>'; break;
+    case 'Clouds': weatherIcon= '<i class="fa-solid fa-cloud"></i>'; break;
     default : weatherIcon= '<i class="fa-solid fa-x"></i>'; break;
   }
   document.querySelector('.today-weather').innerHTML=weatherIcon;

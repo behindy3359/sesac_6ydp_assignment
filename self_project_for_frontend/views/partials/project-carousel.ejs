@@ -1,0 +1,52 @@
+<div class="sticky-title">
+  <div class="project-carousel-wrapper">
+    <div class="project-carousel-container">
+      <div class="project-carousel-lbutton"></div>
+      <div class="project-carousel-itmem project-carousel-item1"></div>
+      <div class="project-carousel-itmem project-carousel-item2"></div>
+      <div class="project-carousel-itmem project-carousel-item3"></div>
+      <div class="project-carousel-itmem project-carousel-item4"></div>
+      <div class="project-carousel-rbutton"></div>
+      <div class="project-carousel-button-wrapper"> 
+        <div class="project-carousel-botton-button" id="project-carousel-botton-button1"></div> 
+        <div class="project-carousel-botton-button" id="project-carousel-botton-button2"></div> 
+        <div class="project-carousel-botton-button" id="project-carousel-botton-button3"></div> 
+        <div class="project-carousel-botton-button" id="project-carousel-botton-button4"></div>
+      </div>
+     </div>
+  </div>
+</div>
+<script>
+  const carouselContainer = document.querySelector('.project-carousel-container');
+const leftButton = document.querySelector('.project-carousel-lbutton');
+const rightButton = document.querySelector('.project-carousel-rbutton');
+const bottomButtons = document.querySelectorAll('.project-carousel-bottom-button');
+
+let currentIndex = 0;
+
+function updateCarousel() {
+  const offset = -currentIndex * 100;
+  carouselContainer.style.transform = `translateX(${offset}vw)`;
+}
+
+leftButton.addEventListener('click', () => {
+  if (currentIndex > 0) {
+    currentIndex--;
+    updateCarousel();
+  }
+});
+
+rightButton.addEventListener('click', () => {
+  if (currentIndex < bottomButtons.length - 1) {
+    currentIndex++;
+    updateCarousel();
+  }
+});
+
+bottomButtons.forEach((button, index) => {
+  button.addEventListener('click', () => {
+    currentIndex = index;
+    updateCarousel();
+  });
+});
+</script>

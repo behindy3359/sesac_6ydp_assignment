@@ -7,4 +7,5 @@
 
 .DS_Store
 node_modules/
-pacjage-lock.json
+package-lock.json
+project-README.txt
