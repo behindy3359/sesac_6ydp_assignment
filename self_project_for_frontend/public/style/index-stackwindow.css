@@ -56,14 +56,14 @@
 .imageContainer {
   width: 20vh;
   height: 30vh;
-  background-image: url('/source/main-duck-rstand.png');
+  background-image: url('/im/main-duck-rstand.png');
   background-repeat: no-repeat;
   background-size: cover;
   animation: move-right 0.5s linear infinite forwards;
 }
 @keyframes move-right {
-  25% { background-image: url('/source/main-duck-rwalkframe1.png'); }
-  50% { background-image: url('/source/main-duck-rstand.png'); }
-  75% { background-image: url('/source/main-duck-rwalkframe2.png'); }
-  100% { background-image: url('/source/main-duck-rstand.png'); }
+  25% { background-image: url('/im/main-duck-rwalkframe1.png'); }
+  50% { background-image: url('/im/main-duck-rstand.png'); }
+  75% { background-image: url('/im/main-duck-rwalkframe2.png'); }
+  100% { background-image: url('/im/main-duck-rstand.png'); }
 }

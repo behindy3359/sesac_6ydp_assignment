@@ -51,29 +51,30 @@ document.addEventListener('DOMContentLoaded', () => {
   updateClock();
 });
 
-/** openweather api 를 활용해서 동작구 상도역 부근의 날씨를 가져옴, 오늘의 날씨, 실시간 날씨는 비싸! */
-function getWeatherData(){
-  const lat = 37.50316;
-  const lon = 126.9477;
-  const appkey ='8b57cc4d4eb1403e1809936402e9221c';
-  /** promise 타입으로 받아오는듯? */
-  const data = axios.get(`https://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${lon}&appid=${appkey}`);
-  return data;
-}
+// /** openweather api 를 활용해서 동작구 상도역 부근의 날씨를 가져옴, 오늘의 날씨, 실시간 날씨는 비싸! */
+// function getWeatherData(){
+//   const lat = 37.50316;
+//   const lon = 126.9477;
+//   const appkey ='8b57cc4d4eb1403e1809936402e9221c';
+//   /** promise 타입으로 받아오는듯? */
+//   const data = axios.get(`https://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${lon}&appid=${appkey}`);
+//   console.log(data);
+//   return data;
+// }
 
-/** 날씨 데이터를 받아와 아이콘으로 변환 */
-getWeatherData().then(res => {
-  const Weather = res.data.weather[0].main;
-  let weatherIcon ='';
-  switch(Weather){
-    case 'Thunderstorm': weatherIcon='<i class="fa-solid fa-bolt"></i>'; break;
-    case 'Drizzle': weatherIcon= '<i class="fa-solid fa-cloud-rain"></i>'; break;
-    case 'Rain': weatherIcon= '<i class="fa-solid fa-cloud-showers-heavy"></i>'; break;
-    case 'Snow': weatherIcon= '<i class="fa-solid fa-snowflake"></i>'; break;
-    case 'Atmosphere': weatherIcon= '<i class="fa-solid fa-wind"></i>'; break;
-    case 'Clear': weatherIcon= '<i class="fa-solid fa-sun"></i>'; break;
-    case 'Clouds': weatherIcon= '<i class="fa-solid fa-cloud"></i>'; break;
-    default : weatherIcon= '<i class="fa-solid fa-x"></i>'; break;
-  }
-  document.querySelector('.today-weather').innerHTML=weatherIcon;
-})
+// /** 날씨 데이터를 받아와 아이콘으로 변환 */
+// getWeatherData().then(res => {
+//   const Weather = res.data.weather[0].main;
+//   let weatherIcon ='';
+//   switch(Weather){
+//     case 'Thunderstorm': weatherIcon='<i class="fa-solid fa-bolt"></i>'; break;
+//     case 'Drizzle': weatherIcon= '<i class="fa-solid fa-cloud-rain"></i>'; break;
+//     case 'Rain': weatherIcon= '<i class="fa-solid fa-cloud-showers-heavy"></i>'; break;
+//     case 'Snow': weatherIcon= '<i class="fa-solid fa-snowflake"></i>'; break;
+//     case 'Atmosphere': weatherIcon= '<i class="fa-solid fa-wind"></i>'; break;
+//     case 'Clear': weatherIcon= '<i class="fa-solid fa-sun"></i>'; break;
+//     case 'Clouds': weatherIcon= '<i class="fa-solid fa-cloud"></i>'; break;
+//     default : weatherIcon= '<i class="fa-solid fa-x"></i>'; break;
+//   }
+//   document.querySelector('.today-weather').innerHTML=weatherIcon;
+// })

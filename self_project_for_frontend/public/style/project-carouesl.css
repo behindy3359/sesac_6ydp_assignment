@@ -1,4 +1,4 @@
-/* section , 폴더 페이지들이 움직이는 배경 의 타이틀 */
+/* Section, pages scrolling background title */
 .sticky-title {
   width: 100%;
   height: 76vh;
@@ -9,50 +9,70 @@
   font-weight: bold;
   text-align: center;
 }
-/* 캐러셀을 감싸 정렬하기 위한 부분, 크기 정의 */
-.project-carousel-wrapper{
+
+/* Wrapper to align and size the carousel */
+.project-carousel-wrapper {
   width: 100%;
   height: 76vh;
+  position: relative;
   display: flex;
   justify-content: center;
+  background-color: red;
 }
 
-/* 캐러셀 구현부 */
-.project-carousel-container{
-  width: 400%;
+/* Carousel implementation */
+.project-carousel-container {
+  width: 400vw;
   height: 100%;
   position: relative;
-  background-color: orange;
-  display: grid;  
-  place-items: center
-}
-/* 캐러셀 좌,우 이동버튼 */
-.project-carousel-lbutton{
-  width: 100px;
-  height: 100%;
-  position: absolute;
-  left: 0px;
-  background-color: greenyellow;
-}
-.project-carousel-rbutton{
-  width: 100px;
-  height: 100%;
-  right: 0px;
-  position: absolute;
-  background-color: greenyellow;
+  display: flex;
+  transition: 0.3s;
 }
 
-/* 캐러셀 내부 아이템 정의 */
-.project-carousel-item{
+/* Definition of carousel items */
+.project-carousel-item {
   width: 100vw;
   height: 100%;
   box-sizing: border-box;
-  border: 30px solid black;
-  float: left;
+  position: absolute;
+}
+#project-carousel-item1{
+  left: 0%;
+}
+#project-carousel-item2{
+  left: 100%;
+}
+#project-carousel-item3{
+  left: 200%;
+}
+#project-carousel-item4{
+  left: 300%;
 }
 
-/* 캐러셀 하단부 이동버튼  */
-.project-carousel-button-wrapper{
+/* Carousel left and right move buttons */
+.project-carousel-lbutton, .project-carousel-rbutton {
+  width: 100px;
+  height: 100%;
+  position: absolute;
+  cursor: pointer;
+  top: 0;
+  background-color: grey;
+  opacity: 0;
+}
+.project-carousel-lbutton:hover, .project-carousel-rbutton:hover{
+  opacity: 0.2;
+}
+
+
+.project-carousel-lbutton {
+  left: 0px;
+}
+.project-carousel-rbutton {
+  right: 0px;
+}
+
+/* Carousel bottom move buttons */
+.project-carousel-button-wrapper {
   width: 100vw;
   height: 50px;
   position: absolute;
@@ -60,10 +80,14 @@
   justify-content: center;
   bottom: 0px;
 }
-.project-carousel-botton-button{
+
+.project-carousel-button {
   width: 100px;
-  height: 40px;
-  background-color:purple;
-  border: 4px solid black ;
-  position: relative;
+  height: 20px;
+  background-color: rgb(214, 214, 214);
+  border-radius: 5px;
+  margin: 5px;
+  cursor: pointer;
+  transition: 0.3s;
+  opacity: 0.5;
 }
