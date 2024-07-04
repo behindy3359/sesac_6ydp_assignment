@@ -1,0 +1,151 @@
+/* 버튼 반짝임 애니메이션 */
+@keyframes twinkle-button {
+    0%{
+        color: black;
+        border-color: yellow;
+    }
+    25%{
+        border-color: black;
+    }
+    50%{
+        color: yellow;
+        border-color: yellow;
+    }
+    75%{
+        border-color: black;
+        
+    }
+    100%{
+        color: black;
+        border-color: yellow;
+    }
+}
+
+/* 무대 전면부 커튼 제어 애니메이션 */
+
+@keyframes l-curtain-open {
+    100%{
+        translate: -100%;
+    }
+}
+@keyframes r-curtain-open {
+    99%{
+        translate: 100%;
+        width: 100%;
+    }
+    100%{
+        width: 0%;
+    }
+}
+
+
+/* 푸린 등장 애니메이션 */
+@keyframes purin-advent {
+    15%{
+        rotate: 30deg;
+        translate: -7vw;
+
+    }
+    30%{
+        rotate: -30deg;
+        translate: -14vw;
+
+    }
+    45%{
+        rotate: 30deg;
+        translate: -21vw;
+
+    }
+    60%{
+        rotate: -30deg;
+        translate: -28vw;
+
+    }
+    75%{
+        rotate: 0deg;
+        translate: -35vw;
+        transform: skew(0);
+    }
+    90%{
+        translate: -35vw;
+        transform: skew(15deg);
+        transform-origin: bottom;
+    }
+    100%{
+        translate: -35vw;
+        transform: skew(0deg);
+    }
+}
+@keyframes purin-advent-mediaQuery {
+    15%{
+        rotate: 30deg;
+    }
+    30%{
+        rotate: -30deg;
+    }
+    45%{
+        rotate: 30deg;
+    }
+    60%{
+        rotate: -30deg;
+    }
+    75%{
+        rotate: 0deg;
+        transform: skew(0);
+    }
+    90%{
+        transform: skew(15deg);
+        transform-origin: bottom;
+    }
+    100%{
+        transform: skew(0deg);
+    }
+}
+
+/* 선글라스 애니메이션 */
+@keyframes dot-glass-appear {
+    0%{
+        transform: rotate(20deg);
+        translate: 0 -66vh 0;
+        visibility: hidden;
+
+    }
+    75%{
+        transform: rotate(20deg);
+        translate: 0 -66vh 0;
+        visibility: hidden;
+    }
+    100%{
+        transform: rotate(20deg);
+        translate: 0 0 0;
+    }
+}
+
+/* 푸린 멋지다 최고다! */
+@keyframes world-best-purin {
+    0%{
+        translate: -35vw;
+        transform: skew(0deg);
+        transform-origin: bottom;
+    }
+    25%{
+        translate: -35vw;
+        transform: skew(15deg);
+        transform-origin: bottom;
+    }
+    50%{
+        translate: -35vw;
+        transform: skew(0deg);
+        transform-origin: bottom;
+    }
+    75%{
+        translate: -35vw;
+        transform: skew(-15deg);
+        transform-origin: bottom;
+    }
+    100%{
+        translate: -35vw;
+        transform: skew(0deg);
+        transform-origin: bottom;
+    }    
+}

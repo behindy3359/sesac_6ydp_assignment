@@ -1,0 +1,306 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>지금 뭐먹지?</title>
+
+  <!-- bootstrap CDN -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+      
+  <!-- Font Awesome CDN-->
+  <script src="https://kit.fontawesome.com/14db1d786f.js" crossorigin="anonymous"></script>
+
+
+  <link rel="stylesheet" href="./css/mainStyle.css">
+  <link rel="stylesheet" href="./css/main_toy.css">
+  <link rel="stylesheet" href="./css/main_toy_animation.css">
+  <link rel="stylesheet" href="./css/mainResponsiveQuery.css"> 
+</head>
+<body>
+  <!-- header -->
+  <header class="navbar navbar-expand-lg navbar-dark bg-success fixed-top">
+    <nav class="container">
+      <a class="navbar-brand" href="#">지금 뭐먹지?</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" >
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav">
+          <li class="nav-item">
+            <a class="nav-link active" href="#">breakfast</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">lunch</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">dinner</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#"><i class="fa-solid fa-moon"></i> night snack</a>
+          </li>
+         </ul>
+      </div>
+    </nav>
+  </header>
+
+  <!-- main -->
+  <main>
+    
+    <!-- section 1 carousel -->
+    <section class="container mt-5 pt-4" id="section1">
+      <article id="carouselExampleIndicators" class="carousel slide" data-bs-ride="carousel">
+        <div class="carousel-indicators">
+          <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" class="active"></button>
+          <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1"></button>
+          <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="2"></button>
+        </div>
+        <div class="carousel-inner">
+          <div class="carousel-item active">
+            <img src="./source/main-food5.jpg" class="d-block w-100" alt="Slide 1"/>
+          </div>
+          <div class="carousel-item">
+            <img src="./source/main-food9.jpg" class="d-block w-100" alt="Slide 2"/>
+          </div>
+          <div class="carousel-item">
+            <img src="./source/main-food2.jpg" class="d-block w-100" alt="Slide 3"/>
+          </div>
+        </div>
+      </article>
+    </section>
+
+    <section class="main container mt-5 pt-4" id="section2">
+      <hr class="my-4" />
+      <article class="row mt-4" id='section2'>
+        <h2> 프로필에 써 볼까? </h2>
+        <div class="col-md-4 cb rounded text-light p-0 m-1">
+          <header class="bg-secondary">
+            <nav class="d-flex align-items-center mb-0 navbar navbar-expand-lg">
+              <div class="d-flex align-items-center">
+                <div class="cb-hd-btn rounded-circle bg-danger me-1"></div>
+                <div class="cb-hd-btn rounded-circle bg-warning me-1"></div>
+                <div class="cb-hd-btn rounded-circle bg-success me-1"></div>
+              </div>
+              <div class="cb-title ms-auto"> 제목입니다!</div>
+            </nav>
+          </header>
+          <section class="cb-txtbox rounded-1 rounded-top-0 bg-dark p-3 overflow-auto">
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Reprehenderit harum adipisci excepturi dolor reiciendis omnis autem delectus laudantium vitae quidem, eius accusantium quisquam dolorem dignissimos soluta veniam aspernatur sunt! Laboriosam!
+          </section>
+        </div>        
+        <div class="col-md-4 cb rounded text-light p-0 m-1 d-flex flex-column">
+          <header class="cb-hd bg-secondary">
+            <nav class="cb-hd-btns d-flex align-items-center mb-0 navbar navbar-expand-lg">
+              <div class="d-flex align-items-center">
+                <div class="cb-hd-btn rounded-circle bg-danger me-1"></div>
+                <div class="cb-hd-btn rounded-circle bg-warning me-1"></div>
+                <div class="cb-hd-btn rounded-circle bg-success me-1"></div>
+              </div>
+              <div class="cb-title ms-auto"> 제목입니다!</div>
+            </nav>
+          </header>
+          <textarea type="textbox" class="cb-txtbox text-light rounded-1 rounded-top-0 bg-dark p-3 overflow-auto flex-grow-1" style="outline: none;" name="" id=""></textarea>
+        </div>
+        <div class="col-md-8 mb-4">
+        </div>
+      </article>
+      
+       
+      
+      <hr class="my-4" />
+
+      <!-- article1 - 메뉴 추천? -->
+      <article class="row mt-4" id='section3'>
+        <div class="col-md-8">
+          <h2> 뭐라도 좀 먹을까?</h2>
+          <p class="lead">"분명히, 확실히, 지금 배고픈 당신을 위해! 점심시간은 지났는데 일어나기는 귀찮고"</p>
+          <span id="menuPlate"></span>
+        </div>
+        <div class="col-md-4 mb-4">
+          <img class="img-fluid rounded" src="./source/main-food4.jpg" alt="배고프당">
+        </div>
+      </article>
+
+      <hr class="my-4" />
+
+      <!-- article2 - 어제 뭐먹었지 -->
+      <article class="row" id='section4'>
+        <h2 id="portfolio" class="mb-4"> 면 </h2> 
+        <p class="lead">"큰일이야! 곧 여름이 오는데 시원한 음식을 찾아야해"</p>
+        <div class="col-md-4 mb-4">
+          <img src="./source/main-noodle1.jpg" class="img-fluid rounded" alt="Project 1"/>
+          <h5 class="mt-2">베트남식 어쩌고</h5>
+          <p>해물이 볶음이 어쩌고 저쩌고</p>
+        </div>
+        <div class="col-md-4 mb-4">
+          <img src="./source/main-noodle2.jpg" class="img-fluid rounded" alt="Project 2"/>
+          <h5 class="mt-2">열두냉면</h5>
+          <p>'열'무 '두'부가 들어간 냉 면</p>
+        </div>
+        <div class="col-md-4 mb-4">
+          <img src="./source/main-noodle3.jpg" class="img-fluid rounded" alt="Project 3"/>
+          <h5 class="mt-2">열무국수</h5>
+          <p>집 앞 시장에서 파는 시원한 국수</p>
+        </div>
+      </article>
+
+      <hr class="my-4" />
+
+      <!-- article3 후기 -->
+      <article id="section5" class="carousel slide" data-bs-ride="carousel" >
+        <h2 id="testimonials" class="mb-4">후기</h2>
+        <p class="lead">이 사람들은 이제 배가 부릅니다.</p>
+        <div class="carousel-inner">
+          <div class="carousel-item active">
+            <blockquote class="blockquote text-center">
+              <p> "아주 새롭고 놀라운 맛이에요!" </p>
+              <footer class="blockquote-footer"><span class="text-info"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-regular fa-star"></i></span> 김 춘식씨, 배가 부른 사람</footer>
+            </blockquote>
+          </div>
+          <div class="carousel-item">
+            <blockquote class="blockquote text-center">
+              <p> "둘이 먹다가 셋이 먹으면 더 맛있어요!"</p>
+              <footer class="blockquote-footer"><span class="text-info"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i></span> 왕 득춘씨, 푸바오 애호가</footer>
+            </blockquote>
+          </div>
+        </div>
+        <button class="carousel-control-prev" type="button" data-bs-target="#testimonialCarousel" data-bs-slide="prev" >
+          <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+          <span class="visually-hidden">Previous</span>
+        </button>
+        <button class="carousel-control-next" type="button" data-bs-target="#testimonialCarousel" data-bs-slide="next" >
+          <span class="carousel-control-next-icon" aria-hidden="true"></span>
+          <span class="visually-hidden">Next</span>
+        </button>
+      </article>
+
+      <hr class="my-4" />
+      
+      <!-- article4 -->
+      <article class="container mt-5" id='section6'>
+        <h2 class="mb-4"> 장난감 1 </h2>
+        <button class="btn btn-success float-end" onclick="startAnimation()" id="writeButton">장난감 작동!</button>
+        <div class="row justify-content-center">
+            <div class="col-md-6 toyContainer">            
+                <div class="content1">
+                    <div class="item" id="content1-item1"></div>
+                    <div class="item" id="content1-item2"></div>
+                    <div class="item container" id="content1-item3">
+                        <div class="donut" id="content1-item3-1"></div>
+                        <div class="donut-overlay" id="content1-item3-2"></div>
+                    </div>
+                    <div class="item" id="content1-item4"></div>
+                    <div class="item" id="content1-item5"></div>
+                    <div class="item" id="content1-item6"></div>
+                    <div class="item" id="content1-item7"></div>
+                </div>
+            </div>
+            <div class="col-md-6 toyContainer">  
+                <div class="content2">
+                    <div class="item" id="content2-item1"></div>
+                    <div class="item" id="content2-item2"></div>
+                    <div class="item" id="content2-item3"></div>
+                    <div class="item" id="content2-item4"></div>
+                    <div class="item" id="content2-item5"></div>
+                    <div class="item" id="content2-item6"></div>
+                    <div class="item" id="content2-item7"></div>
+                    <div class="item" id="content2-item8"></div>
+                </div>
+            </div>
+        </div>
+      </article>
+
+      <hr class="my-4" />
+
+      <article class="container mt-5" id='section7'>
+        <h2 class="mb-4">장난감 2</h2>
+        <button class="btn btn-success float-end" onclick="rollMenu()" id="writeButton">장난감 작동!</button>
+        <div class="row justify-content-center">
+            <div class="col-12 col-md-6 toyContainer content3container">            
+                <div class="content3">
+                    <!-- 내용을 여기에 추가 -->
+                </div>
+            </div>
+            <div class="col-12 col-md-6 toyContainer">  
+                <div class="content4">
+                    <div class="pb-1" id="randomMenu">
+                        <div id="randomMenu-prefix"></div>
+                        <div id="randomMenu-suffix"></div>
+                        <div>&nbsp;&nbsp;먹으러 가야겠다.</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+      </article>
+
+      <hr class="my-4" />
+
+      <article class="container mt-5" id='section8'>
+        <h2 class="mb-4"> 장난감 3</h2>
+        <button class="btn btn-success float-end" onclick="textChange()" id="writeButton2">장난감 작동!</button>
+        <div class="row justify-content-center">
+          <div class="col-md-6 toyContainer content5">            
+            <div class="behind-light"></div>
+            <div class="duck" onclick="changePage()"></div>
+          </div>
+        </div>
+      </article>
+    </section>
+  </main>
+
+  <!-- aside , sidebar -->
+  <aside class="container fixed side-bar">
+    <div class="flex-shrink-0 bg-success p-3 rounded-start">
+      <ul class="list-unstyled ps-0">
+        <li class="mb-1">
+          <button onclick="redirectToIndex()" class="btn text-light btn-toggle d-inline-flex align-items-centerrounded border-0 collapse" data-bs-toggle="collapse">
+            <b> 푸린씨의 무대</b>
+          </button><br>
+          <button class="btn text-light btn-toggle d-inline-flex align-items-centerrounded border-0 collapse" data-bs-toggle="collapse" data-bs-target="#home-collapse" aria-expanded="true">
+            <b>뭐라도 좀 먹을까?</b>
+          </button>
+          <div class="collapse" id="home-collapse">
+            <ul class="btn-toggle-nav list-unstyled fw-normal pb-1 small">
+              <li><a href="./mainpage.html#section1" class="link-body-emphasis d-inline-flex text-decoration-none rounded text-light"> 맛있겠지? </a></li>
+              <li><a href="./mainpage.html#section2" class="link-body-emphasis d-inline-flex text-decoration-none rounded text-light"> 프로필에 써 볼까? </a></li>
+              <li><a href="./mainpage.html#section3" class="link-body-emphasis d-inline-flex text-decoration-none rounded text-light"> 메뉴 </a></li>
+              <li><a href="./mainpage.html#section4" class="link-body-emphasis d-inline-flex text-decoration-none rounded text-light"> 면 </a></li>
+              <li><a href="./mainpage.html#section5" class="link-body-emphasis d-inline-flex text-decoration-none rounded text-light"> 후기 </a></li>
+              <li><a href="./mainpage.html#section6" class="link-body-emphasis d-inline-flex text-decoration-none rounded text-light"> 장난감1 </a></li>
+              <li><a href="./mainpage.html#section7" class="link-body-emphasis d-inline-flex text-decoration-none rounded text-light"> 장난감2 </a></li>
+              <li><a href="./mainpage.html#section8" class="link-body-emphasis d-inline-flex text-decoration-none rounded text-light"> 장난감3 </a></li>
+            </ul>
+          </div>
+        </li>
+        <li class="mb-1">
+          <button class="btn btn-toggle d-inline-flex align-items-center rounded border-0 collapsed text-light" data-bs-toggle="collapse" data-bs-target="#dashboard-collapse" aria-expanded="false">
+            <b> 메뉴 생각중 </b>
+          </button>
+          <div class="collapse" id="dashboard-collapse">
+            <ul class="btn-toggle-nav list-unstyled fw-normal pb-1 small">
+              <li><a href="#" class="link-body-emphasis d-inline-flex text-decoration-none rounded text-light">아침</a></li>
+              <li><a href="#" class="link-body-emphasis d-inline-flex text-decoration-none rounded text-light">점심</a></li>
+              <li><a href="#" class="link-body-emphasis d-inline-flex text-decoration-none rounded text-light">저녁</a></li>
+              <li><a href="#" class="link-body-emphasis d-inline-flex text-decoration-none rounded text-light">야식</a></li>
+            </ul>
+          </div>
+        </li>
+        <button onclick="changePage()" class="btn text-light btn-toggle d-inline-flex align-items-center rounded border-0 collapsed">
+          <b> 오리네 집으로</b>
+        </button>
+      </ul>
+    </div>
+  </aside>
+  <!-- footer -->
+  <footer class="bg-success text-white mt-5 py-3">
+    <div class="container text-center">
+      <p class="mb-0">&copy; 과제에 GPT씨와 FireFly 씨가 매우많은 도움을 주셨으니 어쩌고</p>
+    </div>
+  </footer>
+</body>
+<script defer src="./js/js_main_menus.js"></script>
+<script src="./js/js_main.js"></script>
+<script src="./js/js_duckroom.js"></script>
+</html>
